@@ -1,0 +1,26 @@
+I"<p>生信技能树—jimmy</p>
+
+<p>https://www.bilibili.com/video/av37568990</p>
+
+<h2 id="msigdb"><code class="highlighter-rouge">MSigDB</code></h2>
+<p>数据集 药物处理影响通路、cancer hallmark, GO and KEGG等</p>
+
+<p>GSE -&gt; 表达矩阵 -&gt; 统计分析 -&gt; 注释，富集 -&gt; PPI网络， 模块</p>
+
+<p>统计方法</p>
+<ul>
+  <li>差异分析</li>
+  <li>PCA (Principal Component Analysis)</li>
+  <li>PLS (Partial Least Squares)</li>
+  <li>Lasso (Least Absolute Shrinkage and Selection Operator)</li>
+  <li>WCGNA</li>
+  <li>GWGS</li>
+  <li>Cytoscape MCODE</li>
+</ul>
+
+<h2 id="r">R</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x = ls('package:xxxx.db')
+toTable(x[1])
+as.list(x[1])
+</code></pre></div></div>
+:ET

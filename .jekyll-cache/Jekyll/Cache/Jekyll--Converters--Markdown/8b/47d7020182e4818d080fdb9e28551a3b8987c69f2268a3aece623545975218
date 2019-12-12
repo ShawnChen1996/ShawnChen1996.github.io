@@ -1,0 +1,543 @@
+I"R?<p>This is a notebook about Statistic, taken while watching online course Statistic from Khan Academy.</p>
+
+<h2 id="basic-notation">Basic notation</h2>
+
+<blockquote>
+  <ul>
+    <li>sample size : $n$</li>
+    <li>population size : $N$</li>
+    <li>popualation mean : $\mu$</li>
+    <li>sample mean : $\bar{x}$</li>
+    <li>
+      <p>the  population variance : $\sigma^2 = { \sum{(x_i -\bar{x})^2} \over N}$</p>
+    </li>
+    <li>the sample variance : $S_n^2 = {\sum(x_i - \bar{x})^2 \over n }$</li>
+  </ul>
+
+  <p><strong>often the sample variance is less than the population variance, so in order to estimate the population variance, we need to modify it as follows:</strong></p>
+
+  <ul>
+    <li>the <strong>unbiased</strong> sample variance : $S_n^2 = {\sum(x_i - \bar{x})^2 \over n -1}$</li>
+    <li>stanard deviation : $\sigma = \sqrt{\sigma^2} = \sqrt{\sum(x_i - \mu)^2 \over N}$</li>
+    <li>stanard deviation : $s= \sqrt{s^2} = \sqrt{\sum(x_i - \bar{x})^2 \over n-1}$</li>
+  </ul>
+
+</blockquote>
+
+<h2 id="random-variable">Random Variable</h2>
+<blockquote>
+  <p>A function mapping a experiment to a variable</p>
+
+  <p>There are two types:</p>
+  <ol>
+    <li>discrete random variable</li>
+    <li>continues random variable</li>
+  </ol>
+
+</blockquote>
+
+<h2 id="bernoulli-distribution">Bernoulli distribution</h2>
+<blockquote>
+  <p>A single trial with two possible outcome, p% to succed and (1-p)% to fail</p>
+</blockquote>
+
+<p><strong>Expectation of Bernoulli distribution</strong></p>
+<blockquote>
+  <ul>
+    <li>
+      <script type="math/tex; mode=display">E = p</script>
+    </li>
+    <li>
+      <script type="math/tex; mode=display">\sigma^2 = p(1-p)</script>
+    </li>
+  </ul>
+</blockquote>
+
+<h2 id="binomial-distribution">Binomial distribution</h2>
+<p>The binomial distribution is a Bernoulli distribution if n tries, n&gt;1.</p>
+
+<blockquote>
+  <p>example:</p>
+
+  <p>A person took 6 shoots with 30% likely to make the shot</p>
+</blockquote>
+
+<p>p(X = 0) = 0.7 * 0.7 * 0.7 * 0.7 * 0.7 * 0.7 = $0.7^6 * 0.3^0 * C_6^0$</p>
+
+<p>p(X = 1) = 0.3 * 0.7 * 0.7 * 0.7 * 0.7 * 0.7 = $0.7^5 * 0.3^1 * C_6^1$</p>
+
+<p>p(X = 2) = 0.3 * 0.3 * 0.7 * 0.7 * 0.7 * 0.7 = $0.7^4 * 0.3^2 * C_6^2$</p>
+
+<p>p(X = 3) = 0.3 * 0.3 * 0.3 * 0.7 * 0.7 * 0.7 = $0.7^3 * 0.3^3 * C_6^3$</p>
+
+<p>p(X = 4) = 0.3 * 0.3 * 0.3 * 0.3 * 0.7 * 0.7 = $0.7^2 * 0.3^4 * C_6^4$</p>
+
+<p>p(X = 5) = 0.3 * 0.3 * 0.3 * 0.3 * 0.3 * 0.7 = $0.7^1 * 0.3^5 * C_6^5$</p>
+
+<p>p(X = 6) = 0.3 * 0.3 * 0.3 * 0.3 * 0.3 * 0.3 = $0.7^0 * 0.3^6 * C_6^6$</p>
+
+<blockquote>
+  <script type="math/tex; mode=display">p(X=n) = 0.3^n * 0.7^{6-n} * C_6^n</script>
+
+  <script type="math/tex; mode=display">C_n^k = \binom{n}{k} = \frac{n!}{k!(n-k)!}</script>
+</blockquote>
+
+<hr />
+
+<p><strong>Expectation of Binomial distribution</strong></p>
+
+<blockquote>
+  <p>n tries with possibility of p to success for each try</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>
+      <script type="math/tex; mode=display">p(x=k) = \binom{n}{k}*p^k*(1-p)^{n-k}</script>
+    </li>
+    <li>
+      <script type="math/tex; mode=display">E(x) = np</script>
+    </li>
+    <li>
+      <script type="math/tex; mode=display">\sigma^2 = np(1-p)</script>
+    </li>
+    <li>
+      <script type="math/tex; mode=display">E = p</script>
+    </li>
+    <li>
+      <script type="math/tex; mode=display">\sigma^2 = p(1-p)</script>
+    </li>
+  </ul>
+</blockquote>
+
+<h2 id="poisson-distribution">Poisson distribution</h2>
+<blockquote>
+  <p>based on two assumption:</p>
+  <ol>
+    <li>the event happens at stable rate, any period of time is no different than another</li>
+    <li>the events between different time period are independent</li>
+  </ol>
+</blockquote>
+
+<p>The expectation</p>
+
+<script type="math/tex; mode=display">E(X) = \lambda = np</script>
+
+<p>say X = number of cars passion in 1 hour</p>
+
+<p>$\lambda$ cars/hour = $np$ = ${60 * {\lambda \over 60}}$</p>
+
+<p>this is to split one hour into 60 min and examin if 1 car will pass in each minute with the possibility of $\lambda \over 60$ and test rize n = 60</p>
+
+<p>WHAT IF more than 1 cars passes —&gt; MORE GRANULAR</p>
+
+<p>Set the interval to 1 sec:</p>
+
+<p><script type="math/tex">p(X=k) = \binom{3600}{k}*({\lambda \over 3600})^k*({1-{\lambda \over 3600}})^{3600-k}</script>
+–&gt; more and more granular –&gt; $\infty$</p>
+
+<h3 id="possion-distribution-formular">Possion distribution formular</h3>
+
+<p><script type="math/tex">p(X=k)=\lim_{n\to\infty} \binom{n}{k}*({\lambda \over n})^k*({1-{\lambda \over n}})^{n-k} = ......</script>
+<script type="math/tex">=\frac{\lambda^k}{k!} \cdot e^{-\lambda}</script></p>
+
+<h2 id="normal-distribuation">Normal Distribuation</h2>
+
+<script type="math/tex; mode=display">p(X) = \frac{1}{\sigma \sqrt{2\pi}}  e ^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}</script>
+
+<script type="math/tex; mode=display">Z-score = \frac{x-\mu}{\sigma}</script>
+
+<p><script type="math/tex">p(X) = \frac{1}{\sigma \sqrt{2\pi}}  e ^{-\frac{1}{2}z^2}</script>
+Z-score is how many standard deviations away from the sample mean and it can be used on any distributions</p>
+
+<p><strong>NOTE</strong> :</p>
+<blockquote>
+  <p>the Z table is a accumulative distribution</p>
+</blockquote>
+
+<p><strong>Significant level</strong> :</p>
+<blockquote>
+  <ul>
+    <li>$\mu \pm \sigma$: p = 68%</li>
+    <li>$\mu \pm 2\sigma$ : p = 95% –&gt; common confidential Interval</li>
+    <li>$\mu \pm 3\sigma$: p = 99.7%</li>
+  </ul>
+</blockquote>
+
+<h2 id="central-limit-theorem">Central limit theorem</h2>
+
+<blockquote>
+  <p>sample sum or sample mean from any distribution will display a normal distribution with large enough sampling</p>
+</blockquote>
+
+<p>Standard Error : $S_{Err}$  = Sampling distribution of the sample mean
+and in the sampling distribution :</p>
+
+<script type="math/tex; mode=display">\mu = \mu_0</script>
+
+<blockquote>
+  <p>$\mu$ : mean of sampling distribution</p>
+
+  <p>$\mu_0$ : mean of original population</p>
+</blockquote>
+
+<script type="math/tex; mode=display">\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}} \approx \frac{s}{\sqrt{n}}</script>
+
+<blockquote>
+  <p>In most cases, we aren’t not able to get the standard deivation of the population and std of sample is used to estimate the true std of population
+, and subsequently estimate the std of the sampling distribution</p>
+</blockquote>
+
+<blockquote>
+  <p>p($\bar{x}$ is within 2 $\sigma_{\bar{x}}$ if $\mu_{\bar{x}}$) =<br />
+p($\mu_{\bar{x}}$ is within 2 $\sigma_{\bar{x}}$ if $\bar{x}$)</p>
+</blockquote>
+
+<h3 id="one-tail-test">One tail test</h3>
+<blockquote>
+  <p>if a point where the normalized z score is 2, the area under the curve is before this point is 97.5%, the p value is 1-0.25 = 97.5%</p>
+</blockquote>
+
+<h3 id="two-tail-test">two tail test</h3>
+<blockquote>
+  <p>if a point where the normalized z score is 2, the area under the curve is before this point is 97.5%, the p value is 1-2*0.25 = 95%</p>
+</blockquote>
+
+<p>so two tail test is recommended for its stricter p value</p>
+
+<h3 id="about-sample-size">About sample size</h3>
+<blockquote>
+  <p>if n &gt; 30, the sd is considered close to $\sigma$
+if n &lt; 30, we use t-distribution to estimate its significant level instead of normal distribution</p>
+</blockquote>
+
+<h2 id="independent-random-variables">Independent random variables</h2>
+<p>for two independent variables X, Y</p>
+
+<script type="math/tex; mode=display">E(X) = \mu_X</script>
+
+<script type="math/tex; mode=display">var(X) = E((X-\mu_X)^2) = \sigma_X^2</script>
+
+<script type="math/tex; mode=display">E(Y) = \mu_Y</script>
+
+<script type="math/tex; mode=display">var(Y) = E((Y-\mu_Y)^2) = \sigma_Y^2</script>
+
+<p>For another variable Z, if Z = X + Y:</p>
+
+<script type="math/tex; mode=display">E(Z) = E(X) + E(Y)</script>
+
+<script type="math/tex; mode=display">\mu_Z = \mu_X + \mu_Y</script>
+
+<script type="math/tex; mode=display">var(Z) = var(X) + var(Y)</script>
+
+<script type="math/tex; mode=display">\sigma_Z^2 =  \sigma_{X+Y}^2 = \sigma_X^2 + \sigma_Y^2</script>
+
+<p>For another variable Z, if G = X - Y:</p>
+
+<script type="math/tex; mode=display">E(G) = E(X) - E(Y)</script>
+
+<script type="math/tex; mode=display">\mu_G = \mu_X - \mu_Y</script>
+
+<script type="math/tex; mode=display">var(G) = var(X) + var(Y)</script>
+
+<script type="math/tex; mode=display">\sigma_G^2 =  \sigma_{X-Y}^2 =  \sigma_X^2 + \sigma_{-Y}^2 = \sigma_X^2 + \sigma_Y^2</script>
+
+<p><strong>NOTE</strong> :</p>
+<blockquote>
+  <h2 id="it-is-variance-not-standard-deviation">It is variance, not standard deviation</h2>
+  <p>If we have the sample of x and y, even with different sample size(n,m), 
+we wil have their sampling distribution, and if  we are interested in $z = \bar{x} - \bar{y}$ (the difference between their sampling distribution):</p>
+</blockquote>
+
+<p>We will have a diff sampling distribution like this:</p>
+
+<script type="math/tex; mode=display">\mu_{\bar{x}-\bar{y}} = \mu_{\bar{x}} - \mu_{\bar{y}}</script>
+
+<script type="math/tex; mode=display">\sigma_{\bar{x}-\bar{y}}^2 = \sigma_{\bar{x}}^2 + \sigma_{\bar{y}}^2 = \frac{\sigma_x^2}{n} + \frac{\sigma_y^2}{m}</script>
+
+<script type="math/tex; mode=display">\sigma_{\bar{x}-\bar{y}} = \sqrt{\frac{\sigma_x^2}{n} + \frac{\sigma_y^2}{m}}</script>
+
+<h2 id="note"><strong>NOTE</strong></h2>
+
+<p>The one random variable test is to  test:</p>
+
+<ol>
+  <li>Given a population mean, we can calculate the probability of getting that sample, and do a hypothesis test(test if the sample mean is the population mean), accept or reject the hypothesis based a p value.</li>
+  <li>calculate the confidentila interval without the population mean provided.</li>
+</ol>
+
+<p>The two random variable test is to  test how different these two varibles are:</p>
+
+<ol>
+  <li>Given the mean, we can calculate the probability of getting those sample, and do a hypothesis test(test if they are different, null : they are the not different, the mean of diff is 0 and they should have the same sd, use the overall sd to estimate if possible), accept or reject the hypothesis based a p value.</li>
+  <li>calculate the confidentila interval without the mean provided.</li>
+</ol>
+
+<h2 id="linear-regression">Linear regression</h2>
+<blockquote>
+  <p>To find a line that has represent the data point best,<br />
+the fitted line should have the minimized squared error</p>
+</blockquote>
+
+<p>with the line being</p>
+
+<script type="math/tex; mode=display">y = mx+b</script>
+
+<p>SE_line (squared error agianst the line):</p>
+
+<script type="math/tex; mode=display">SE_{line} =(y_1-(mx_1+b)^2)+(y_2-(mx_2+b)^2)+...+(y_n-(mx_n+b)^2)</script>
+
+<blockquote>
+  <p>We can formulate m and b using partial derivative</p>
+</blockquote>
+
+<script type="math/tex; mode=display">m =\frac{\bar{xy} -\bar{x}\bar{y}}{\bar{xx} - \bar{x}\bar{x}}</script>
+
+<script type="math/tex; mode=display">b = ..</script>
+
+<h2 id="assessment-of-the-fit">Assessment of the fit</h2>
+
+<blockquote>
+  <ul>
+    <li>total variation of y:</li>
+  </ul>
+</blockquote>
+
+<script type="math/tex; mode=display">SE_{\tilde{y}} = (y_1 -\bar{y})^2 +(y_2 -\bar{y})^2+...+y_n -\bar{y})^2</script>
+
+<blockquote>
+  <ul>
+    <li>total variation <strong>NOT</strong> described by the line :</li>
+  </ul>
+</blockquote>
+
+<script type="math/tex; mode=display">SE_{line} =(y_1-(mx_1+b)^2)+(y_2-(mx_2+b)^2)+...+(y_n-(mx_n+b)^2)</script>
+
+<blockquote>
+  <p>Total variation  = those described by the line + those not derribed by the line</p>
+</blockquote>
+
+<script type="math/tex; mode=display">R^2 = 1- {SE_{line} \over SE_{\tilde{y}}}</script>
+
+<blockquote>
+  <p>Here, R squared is the coeffiicient of determination, showing what % of the total variation is descrubed by variation in x according to the line</p>
+</blockquote>
+
+<h2 id="co-variance">Co-variance</h2>
+
+<script type="math/tex; mode=display">cov(x,y)= E((x-E(x))(y-E(y))) =\bar{xy} -\bar{x}\bar{y}</script>
+
+<script type="math/tex; mode=display">m =\frac{\bar{xy} -\bar{x}\bar{y}}{\bar{xx} - \bar{x}\bar{x}} = \frac{cov(x,y)}{cov(x,x)} = \frac{cov(x,y)}{var(x)}</script>
+
+<h2 id="chi-squared-distribution">Chi-squared Distribution</h2>
+<blockquote>
+  <p>A test of whether distributions are different</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Mon</th>
+      <th>Tue</th>
+      <th>Wen</th>
+      <th>Thu</th>
+      <th>Fri</th>
+      <th>Sat</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Expected %</td>
+      <td>10</td>
+      <td>10</td>
+      <td>15</td>
+      <td>20</td>
+      <td>30</td>
+      <td>25</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Oberserved</td>
+      <td>30</td>
+      <td>14</td>
+      <td>34</td>
+      <td>45</td>
+      <td>57</td>
+      <td>20</td>
+      <td>total =200</td>
+    </tr>
+    <tr>
+      <td>Expected</td>
+      <td>20</td>
+      <td>20</td>
+      <td>30</td>
+      <td>40</td>
+      <td>60</td>
+      <td>30</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Chi-square statistic</p>
+
+<script type="math/tex; mode=display">\chi^2 =\frac{(30-20)^2}{20}+\frac{(14-20)^2}{20}+\frac{(34-30)^2}{30}+\frac{(45-40)^2}{40}+\frac{(57-60)^2}{60}+\frac{(20-30)^2}{30}</script>
+
+<p>df = 6-1 = 5 as we take 6 sums</p>
+
+<script type="math/tex; mode=display">\chi^2 = \sum_{i=1}^{n}\frac{(O_i-E_i)^2}{E_i}</script>
+
+<p>O_i = number of the observation<br />
+E_i = number of the expectation, E_i = NP_i</p>
+
+<h2 id="anova---analysis-of-variance">Anova - Analysis of variance</h2>
+
+<p><strong>F statistic</strong></p>
+
+<script type="math/tex; mode=display">F = \frac{\frac{SSB}{dfB}}{\frac{SSW}{dfW}}</script>
+
+<p>F statistic can be considered the ratio of two chisquare distribution</p>
+
+<blockquote>
+  <ul>
+    <li>SSB : sum of square between groups</li>
+    <li>SSW : sum of square within groups</li>
+    <li>SST : sum of square total</li>
+  </ul>
+</blockquote>
+
+<p>Example :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>c1</th>
+      <th>c2</th>
+      <th>c3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>3</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>4</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <ul>
+    <li>
+      <script type="math/tex; mode=display">\bar{x_1} = 2, \bar{x_2} = 4, \bar{x_3} = 6</script>
+    </li>
+    <li>
+      <script type="math/tex; mode=display">\bar{\bar{x}} = 4</script>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>
+      <script type="math/tex; mode=display">SST = (3-4)^2 + (2-4)^2+ (1-4)^2+ (5-4)^2+(3-4)+... = 30</script>
+    </li>
+    <li>
+      <script type="math/tex; mode=display">SSW = (3-2)^2 + (2-2)^2+ (1-2)^2+ (5-3)^2+(3-3)+... = 6</script>
+    </li>
+    <li>
+      <script type="math/tex; mode=display">SST = (2-4)^2*3 + (4-4)^2*3 + (6-4)^2*3 = 24</script>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>dfT = mn -1 = 8</li>
+    <li>dfW = mn-m = 6</li>
+    <li>dfB = m -1 = 2</li>
+  </ul>
+</blockquote>
+
+<p><script type="math/tex">SST = SSB+ SSW</script>
+<script type="math/tex">dfT = dfB+ dfW</script></p>
+
+<h2 id="fisher-exact-test">Fisher exact test</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>G1</th>
+      <th>G2</th>
+      <th>sum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>a</td>
+      <td>b</td>
+      <td>a+b</td>
+    </tr>
+    <tr>
+      <td>c</td>
+      <td>d</td>
+      <td>c+d</td>
+    </tr>
+    <tr>
+      <td>a+c</td>
+      <td>b+d</td>
+      <td>n= a+b+c+d</td>
+    </tr>
+  </tbody>
+</table>
+
+<script type="math/tex; mode=display">p = \frac{\binom{a+b}{a}\binom{c+d}{c}}{\binom{n}{a+c}} = \frac{(a+b)!(c+d)!(a+c)!(b+d)!}{a!b!c!d!n!}</script>
+
+<p>Example</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>M</th>
+      <th>F</th>
+      <th>sum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>9</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>3</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>12</td>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+
+<script type="math/tex; mode=display">p = \frac{\binom{10}{1}\binom{14}{11}}{\binom{24}{12}}</script>
+
+<blockquote>
+  <p><strong>NOTE</strong><br />
+the question to answer here is, Given the row and col sum<br />
+how likely it is to get distribution observed.</p>
+</blockquote>
+:ET

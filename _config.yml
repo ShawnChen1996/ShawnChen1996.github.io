@@ -1,0 +1,41 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+
+# Setup
+title:               Shawn's Blog
+tagline:             'Biotech'
+url:                
+baseurl:             
+paginate:            5
+
+# About/contact
+author:
+  name:              Shawn
+  github:            shawnchen1996
+  linkedin:          shawnchen1996
+  email:             shawnchen1996@outlook.com
+
+
+plugins: 
+    [jekyll-paginate]
+
+# Navigation (2nd level links supported)
+# nav:
+#   Home:           
+#     - '/'
+#   Blog:           
+#     - '/blog/'
+#     - { Categories: '/blog/categories/' }
+#     - { Tags: '/blog/tags/' }
+#   About:          
+#     - '/about/'
+#   Github Project: 
+#     - 'http://codinfox.github.io/'
+
+# Where are tags and categories displayed
+tag_page: '/blog/tags/'
+category_page: '/blog/categories/'
+
+

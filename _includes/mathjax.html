@@ -1,0 +1,16 @@
+{%- if page.mathjax -%}
+<script type="text/javascript" 
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    //skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes : true
+  }
+});
+</script>
+{%- endif -%}
