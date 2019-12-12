@@ -14,15 +14,16 @@ title: Home
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
 
-    <span class="post-cate"> 
-            | Tag: 
-            {% for cate in post.categories %}
-                <a ref='/catagories/{{cate}}'>{{ cate}}</a>    
-            {% endfor %}
+    {% if post.categories.size > 0 %}
+    <span class="post-cate"> | Tag: 
+        {% for cate in post.categories %}
+            <a ref='/catagories/{{cate}}'>{{ cate}}</a>    
+        {% endfor %}
     </span>
+    {% endif %}
 
     <div class="message"> 
-        {{ post.content |strip_html | truncate:100}}
+        {{ post.excerpt |strip_html | truncate: 300}}
     </div>
   </div>
   {% endfor %}
