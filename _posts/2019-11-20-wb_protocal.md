@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: Biology
+tags: Biology
 ---
 蛋白定量WB的实验方法和试剂配方。
 

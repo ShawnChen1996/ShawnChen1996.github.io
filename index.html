@@ -7,23 +7,22 @@ title: Home
   {% for post in paginator.posts %}
   <div class="post">
     <h1 class="post-title">
-      <a href="{{ site.url }}/{{ post.url }}">
-        {{ post.title }}
-      </a>
+      <a href="{{ site.url }}/{{ post.url }}"> {{ post.title }} </a>
     </h1>
+    <div class="post-meta">
+        <span class="post-date">{{ post.date | date_to_string }}</span>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+        {% if post.tags.size > 0 %}
+        <span class="post-tags"> | Tags: 
+            {% for tag in post.tags %}
+                <a ref='/tags/#{{tag}}'>{{ tag}}</a>    
+            {% endfor %}
+        </span>
+        {% endif %}
 
-    {% if post.categories.size > 0 %}
-    <span class="post-cate"> | Tag: 
-        {% for cate in post.categories %}
-            <a ref='/catagories/{{cate}}'>{{ cate}}</a>    
-        {% endfor %}
-    </span>
-    {% endif %}
-
-    <div class="message"> 
-        {{ post.excerpt |strip_html | truncate: 300}}
+        <div class="post-excerpt"> 
+            {{ post.excerpt |strip_html | truncate: 300}}
+        </div>
     </div>
   </div>
   {% endfor %}

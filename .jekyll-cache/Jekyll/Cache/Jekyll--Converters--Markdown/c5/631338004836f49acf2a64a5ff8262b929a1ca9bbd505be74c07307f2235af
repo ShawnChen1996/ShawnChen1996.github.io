@@ -1,135 +1,9 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-  <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>
-    
-      Statistic &middot; Shawn's Blog
-    
-  </title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/lanyon.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
-
-  <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
-  <link rel="shortcut icon" href="/public/favicon.ico">
-
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
-</head>
-
-  <script type="text/javascript" 
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    //skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    inlineMath: [['$','$']],
-    displayMath: [['$$','$$']],
-    processEscapes : true
-  }
-});
-</script>
-
-  <body>
-
-    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
-     styles, `#sidebar-checkbox` for behavior. -->
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
-
-<!-- Toggleable sidebar -->
-<div class="sidebar" id="sidebar">
-  <div class="sidebar-item">
-    <p></p>
-  </div>
-
-  <nav class="sidebar-nav">
-    <a class="sidebar-nav-item" href="/">Home</a>
-
-    
-
-    
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/about/">About</a>
-        
-      
-    
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-
-    <a class="sidebar-nav-item" href="https://www.github.com/shawnchen1996/">GitHub</a>
-    <a class="sidebar-nav-item" href="https://www.linkedin.com/in/shawnchen1996/">LinkedIn</a>
-    <a class="sidebar-nav-item" href="mailto:shawnchen1996@outlook.com">Email</a>
-  </nav>
-
-  <div class="sidebar-item">
-    <p>
-      &copy; 2019. All rights reserved.
-    </p>
-  </div>
-</div>
-
-
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
-            <a href="/" title="Home">Shawn's Blog</a>
-            <small>Biotech</small>
-          </h3>
-        </div>
-      </div>
-
-      <div class="container content">
-        <div class="post">
-  <h1 class="post-title">Statistic</h1>
-  <span class="post-date">20 Dec 2018</span>
-    
-    <span class="post-cate"> | Tag: 
-        
-            <a ref='/catagories/DataAnalysis'>DataAnalysis</a>    
-        
-    </span>
-    
-
-    <p>This is a notebook about Statistic, taken while watching online course Statistic from Khan Academy.</p>
+I"�><h1 id="this-is-a-notebook-about-statistic-taken-while-watching-online-course-statistic-from-khan-academy">This is a notebook about Statistic, taken while watching online course Statistic from Khan Academy</h1>
 
 <h2 id="basic-notation">Basic notation</h2>
 
 <blockquote>
+
   <ul>
     <li>sample size : $n$</li>
     <li>population size : $N$</li>
@@ -341,33 +215,24 @@ if n &lt; 30, we use t-distribution to estimate its significant level instead of
 <h2 id="independent-random-variables">Independent random variables</h2>
 <p>for two independent variables X, Y</p>
 
-<script type="math/tex; mode=display">E(X) = \mu_X</script>
-
-<script type="math/tex; mode=display">var(X) = E((X-\mu_X)^2) = \sigma_X^2</script>
-
-<script type="math/tex; mode=display">E(Y) = \mu_Y</script>
-
-<script type="math/tex; mode=display">var(Y) = E((Y-\mu_Y)^2) = \sigma_Y^2</script>
+<p><script type="math/tex">E(X) = \mu_X</script>
+<script type="math/tex">var(X) = E((X-\mu_X)^2) = \sigma_X^2</script>
+<script type="math/tex">E(Y) = \mu_Y</script>
+<script type="math/tex">var(Y) = E((Y-\mu_Y)^2) = \sigma_Y^2</script></p>
 
 <p>For another variable Z, if Z = X + Y:</p>
 
-<script type="math/tex; mode=display">E(Z) = E(X) + E(Y)</script>
-
-<script type="math/tex; mode=display">\mu_Z = \mu_X + \mu_Y</script>
-
-<script type="math/tex; mode=display">var(Z) = var(X) + var(Y)</script>
-
-<script type="math/tex; mode=display">\sigma_Z^2 =  \sigma_{X+Y}^2 = \sigma_X^2 + \sigma_Y^2</script>
+<p><script type="math/tex">E(Z) = E(X) + E(Y)</script>
+<script type="math/tex">\mu_Z = \mu_X + \mu_Y</script>
+<script type="math/tex">var(Z) = var(X) + var(Y)</script>
+<script type="math/tex">\sigma_Z^2 =  \sigma_{X+Y}^2 = \sigma_X^2 + \sigma_Y^2</script></p>
 
 <p>For another variable Z, if G = X - Y:</p>
 
-<script type="math/tex; mode=display">E(G) = E(X) - E(Y)</script>
-
-<script type="math/tex; mode=display">\mu_G = \mu_X - \mu_Y</script>
-
-<script type="math/tex; mode=display">var(G) = var(X) + var(Y)</script>
-
-<script type="math/tex; mode=display">\sigma_G^2 =  \sigma_{X-Y}^2 =  \sigma_X^2 + \sigma_{-Y}^2 = \sigma_X^2 + \sigma_Y^2</script>
+<p><script type="math/tex">E(G) = E(X) - E(Y)</script>
+<script type="math/tex">\mu_G = \mu_X - \mu_Y</script>
+<script type="math/tex">var(G) = var(X) + var(Y)</script>
+<script type="math/tex">\sigma_G^2 =  \sigma_{X-Y}^2 =  \sigma_X^2 + \sigma_{-Y}^2 = \sigma_X^2 + \sigma_Y^2</script></p>
 
 <p><strong>NOTE</strong> :</p>
 <blockquote>
@@ -378,11 +243,9 @@ we wil have their sampling distribution, and if  we are interested in $z = \bar{
 
 <p>We will have a diff sampling distribution like this:</p>
 
-<script type="math/tex; mode=display">\mu_{\bar{x}-\bar{y}} = \mu_{\bar{x}} - \mu_{\bar{y}}</script>
-
-<script type="math/tex; mode=display">\sigma_{\bar{x}-\bar{y}}^2 = \sigma_{\bar{x}}^2 + \sigma_{\bar{y}}^2 = \frac{\sigma_x^2}{n} + \frac{\sigma_y^2}{m}</script>
-
-<script type="math/tex; mode=display">\sigma_{\bar{x}-\bar{y}} = \sqrt{\frac{\sigma_x^2}{n} + \frac{\sigma_y^2}{m}}</script>
+<p><script type="math/tex">\mu_{\bar{x}-\bar{y}} = \mu_{\bar{x}} - \mu_{\bar{y}}</script>
+<script type="math/tex">\sigma_{\bar{x}-\bar{y}}^2 = \sigma_{\bar{x}}^2 + \sigma_{\bar{y}}^2 = \frac{\sigma_x^2}{n} + \frac{\sigma_y^2}{m}</script>
+<script type="math/tex">\sigma_{\bar{x}-\bar{y}} = \sqrt{\frac{\sigma_x^2}{n} + \frac{\sigma_y^2}{m}}</script></p>
 
 <h2 id="note"><strong>NOTE</strong></h2>
 
@@ -418,9 +281,8 @@ the fitted line should have the minimized squared error</p>
   <p>We can formulate m and b using partial derivative</p>
 </blockquote>
 
-<script type="math/tex; mode=display">m =\frac{\bar{xy} -\bar{x}\bar{y}}{\bar{xx} - \bar{x}\bar{x}}</script>
-
-<script type="math/tex; mode=display">b = ..</script>
+<p><script type="math/tex">m =\frac{\bar{xy} -\bar{x}\bar{y}}{\bar{xx} - \bar{x}\bar{x}}</script>
+<script type="math/tex">b = ..</script></p>
 
 <h2 id="assessment-of-the-fit">Assessment of the fit</h2>
 
@@ -444,8 +306,7 @@ the fitted line should have the minimized squared error</p>
   <p>Total variation  = those described by the line + those not derribed by the line</p>
 </blockquote>
 
-<script type="math/tex; mode=display">R^2 = 1- {SE_{line} \over SE_{\tilde{y}}}</script>
-
+<p><script type="math/tex">R^2 = 1- {SE_{line} \over SE_{\tilde{y}}}</script></p>
 <blockquote>
   <p>Here, R squared is the coeffiicient of determination, showing what % of the total variation is descrubed by variation in x according to the line</p>
 </blockquote>
@@ -514,18 +375,16 @@ the fitted line should have the minimized squared error</p>
 
 <p>df = 6-1 = 5 as we take 6 sums</p>
 
-<script type="math/tex; mode=display">\chi^2 = \sum_{i=1}^{n}\frac{(O_i-E_i)^2}{E_i}</script>
-
-<p>O_i = number of the observation<br />
+<p><script type="math/tex">\chi^2 = \sum_{i=1}^{n}\frac{(O_i-E_i)^2}{E_i}</script>
+O_i = number of the observation<br />
 E_i = number of the expectation, E_i = NP_i</p>
 
 <h2 id="anova---analysis-of-variance">Anova - Analysis of variance</h2>
 
 <p><strong>F statistic</strong></p>
 
-<script type="math/tex; mode=display">F = \frac{\frac{SSB}{dfB}}{\frac{SSW}{dfW}}</script>
-
-<p>F statistic can be considered the ratio of two chisquare distribution</p>
+<p><script type="math/tex">F = \frac{\frac{SSB}{dfB}}{\frac{SSW}{dfW}}</script>
+F statistic can be considered the ratio of two chisquare distribution</p>
 
 <blockquote>
   <ul>
@@ -667,68 +526,4 @@ E_i = number of the expectation, E_i = NP_i</p>
 the question to answer here is, Given the row and col sum<br />
 how likely it is to get distribution observed.</p>
 </blockquote>
-
-
-</div>
-
-<div class="related">
-  <h2>Related Posts</h2>
-  <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/biology/dataanalysis/2019/12/05/%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8C%96%E6%8E%98%E5%AE%9E%E4%BE%8B/">
-            公共数据库挖掘实例
-            <small>05 Dec 2019</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/biology/2019/11/20/wb_protocal/">
-            Wb_protocal
-            <small>20 Nov 2019</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/software/biology/2019/10/10/qPCR%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
-            Qpcr数据处理
-            <small>10 Oct 2019</small>
-          </a>
-        </h3>
-      </li>
-    
-  </ul>
-</div>
-
-      </div>
-    </div>
-
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
-    <script>
-
-      (function(document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
-
-        document.addEventListener('click', function(e) {
-          var target = e.target;
-
-          if (target === toggle) {
-            checkbox.checked = !checkbox.checked;
-            e.preventDefault();
-          } else if (checkbox.checked && !sidebar.contains(target)) {
-            /* click outside the sidebar when sidebar is open */
-            checkbox.checked = false;
-          }
-        }, false);
-      })(document);
-    </script>
-  </body>
-</html>
+:ET

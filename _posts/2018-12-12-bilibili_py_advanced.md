@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: Tech
+tags: Tech
 ---
 This notenook is taken according to the video ***Python advanced programming*** on [www.bilibili.com](https://www.bilibili.com/video/av19983355/?from=search&seid=1992914606051276112#page=3).
 

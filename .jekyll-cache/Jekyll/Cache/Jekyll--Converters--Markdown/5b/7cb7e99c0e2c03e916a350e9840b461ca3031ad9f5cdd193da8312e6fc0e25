@@ -1,0 +1,7 @@
+I"Ë<h1 id="jkjkjkjk">jkjkjkjk``</h1>
+<p>The 450k probe uses two probe to test the methylation. One for methylated and one for unmethylated. (red channel and green channel). Then the data from this two channels will be converted into</p>
+<ul>
+  <li>a <strong>$\beta$</strong> value which varies between 0 to 1, the higher it is, more methylated.</li>
+  <li>or <strong>M</strong> value, which had positive and negative values (0 means half methylated).</li>
+</ul>
+:ET
