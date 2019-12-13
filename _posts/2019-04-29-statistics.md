@@ -1,6 +1,7 @@
 ---
 layout: post
-tags: data
+tags: DataAnalysis
+mathjax: true
 ---
 
 # This is a notebook about Statistic, taken while watching online course Statistic from Khan Academy

@@ -333,11 +333,16 @@ a.sidebar-nav-item:focus {
   display: inline-block;
   color: #9a9a9a;
 }
-.post-tags a{
+.post-tag{
     display: inline-block;
-    padding: 0px 5px;
+    padding: 0rem 0.5rem;
     background: #eee;
     border-radius: 5px;
+}
+
+
+.post-content h1 {
+    display:none;
 }
 
 .post-excerpt {

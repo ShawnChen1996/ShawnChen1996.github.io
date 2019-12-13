@@ -4,7 +4,7 @@
  <title>Shawn's Blog</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-12-13T09:44:37+08:00</updated>
+ <updated>2019-12-13T14:31:05+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Shawn</name>
@@ -1412,7 +1412,8 @@ how likely it is to get distribution observed.&lt;/p&gt;
    <link href="http://localhost:4000/2019/03/10/goldendict/"/>
    <updated>2019-03-10T00:00:00+08:00</updated>
    <id>http://localhost:4000/2019/03/10/goldendict</id>
-   <content type="html">&lt;blockquote&gt;
+   <content type="html">&lt;h1 id=&quot;goldendict&quot;&gt;Goldendict&lt;/h1&gt;
+&lt;blockquote&gt;
   &lt;p&gt;天哪， 又要看文献&lt;/p&gt;
 
   &lt;p&gt;烦死了&lt;/p&gt;

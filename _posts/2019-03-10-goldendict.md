@@ -2,8 +2,7 @@
 layout: post
 tags: Software
 ---
-
-
+# Goldendict
 > 天哪， 又要看文献
 >
 > 烦死了
