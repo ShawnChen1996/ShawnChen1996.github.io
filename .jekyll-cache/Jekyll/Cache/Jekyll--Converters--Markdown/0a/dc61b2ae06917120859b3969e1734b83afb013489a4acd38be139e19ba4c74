@@ -1,6 +1,4 @@
-I"�<h1 id="qpcr数据处理">qPCR数据处理</h1>
-
-<blockquote>
+I"<blockquote>
   <p>这次，我们来介绍一下qPCR的数据处理。</p>
 </blockquote>
 
@@ -16,10 +14,9 @@
   <li>Genotyping (设计特性型基因探针，通过荧光判断基因型)</li>
 </ul>
 
-<p><img src="http://upload-images.jianshu.io/upload_images/10532482-5f382c108a0bfdae.png" alt="qPCR" /></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/10532482-5f382c108a0bfdae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="qPCR" /></p>
 
 <p>qPCR作为一种DNA定量手段，一般情况下， 还可以分为<strong>绝对定量</strong>和<strong>相对定量</strong>。</p>
-
 <ul>
   <li><strong>绝对定量</strong> 是通过利用已知浓度的DNA样本绘制标准曲线，然后得到未知样的DNA含量</li>
   <li><strong>相对定量</strong> 是通过与管家基因的比较得到相对的基因表达值</li>
@@ -40,7 +37,7 @@
 
 <p>具体原理是，对于不同的样本和基因，比较到达一定荧光强度所需要的循环数， 如果你的样本中DNA1的量<strong>大于</strong>DNA2的量，那么理论上， DNA1比DNA2需要更少次数的PCR扩增就可以达到某一个阈值.</p>
 
-<p><img src="http://www.mypols.de/wp-content/uploads/qPCR-Probe-PCR-Dilution-series.png" alt="qCR是嘛玩意儿" /></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/10532482-ae498b4323990a08.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="qCR是嘛玩意儿" /></p>
 
 <blockquote>
   <p>理想情况下,比如你的样本中DNA1有32条，DNA2有8条，那么我们如果设置阈值在1024条，那么DNA1需要5次循环， DNA2需要7次才能到达，也就是说相差两次循环，一次循环是翻一番，两次就是4倍，这样我们就知道了 DNA1的量为DNA2的两倍 这就是相对定量</p>
@@ -86,22 +83,31 @@
 
 <p>而他们一般都不太提供最终计算结果，只提供CT值，那么这个就很让人头大了。</p>
 
-<p><img src="http://upload-images.jianshu.io/upload_images/10532482-7c9df6e25b24c69c.png" alt="在bing搜索&quot;头大&quot;" /></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/10532482-7c9df6e25b24c69c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="在bing搜索&quot;头大&quot;" /></p>
 
 <p><strong>于是乎</strong></p>
 
 <p>秉承着 <em><del>自己动手丰衣足食</del></em> <strong>一直折腾一直爽</strong>的传统美德，我写了一个小小的工具，方便大家计算最终的相对表达量</p>
 
-<p>该工具基于微软爸爸的EXCEL和VBA，不限样本数量，基因数量及每组实验的平行个数（如果你有三个复孔，其中一个如果CT和其他两个差别很大，你可以删除该孔，有些组3个复孔，有些2个，不影响程序运行）</p>
+<p>该工具基于微软爸爸的EXCEL和VBA，不限样本数量，基因数量及每组实验的平行个数（如果你有三个复孔，其中一个如果CT和其他两个差别很大，你可以删除该孔，有些组3个复孔，有些2个，不影响程序运行）
+<img src="http://upload-images.jianshu.io/upload_images/10532482-fe590260914c527c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="程序预览图" /></p>
 
+<h2 id="20190701-更新">20190701 更新</h2>
+<p>在同学（zi）的（ji）强（xian）烈（de）要（mei）求（shi）下，我的qPCR数据处理小程序迎来了V2.0版本，主要增加了自动添加误差线的功能。</p>
+
+<p>大家感受一下，<strong>一键出图</strong>的魅力，喜欢的同学记得点赞，转发哦, 获取链接在文末</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/10532482-13d79731b33f180e.gif?imageMogr2/auto-orient/strip" alt="zzzz.gif" /></p>
+
+<hr />
 <p>获得相对表达量值之后呢，你可以使用origin或者graphpad等工具作图，读者可以查看我往期关于origin的文章哦</p>
 
-<p>文章直通车»&gt; <a href="https://www.jianshu.com/p/febf31d6b1f6">origin科研作图</a></p>
+<p>文章直通车»&gt; <a href="http://www.jianshu.com/p/febf31d6b1f6">origin科研作图</a></p>
 
 <blockquote>
   <p>由于我想使用下微信的后台回复功能，小工具链接就不放在这了，有需要的同学请在<strong>后台</strong>回复<code class="highlighter-rouge">qPCR</code>获取工具。</p>
 </blockquote>
 
-<p><strong>此工具如有任何问题或者你们有什么建议，请于公众号“肖恩札记”留言</strong></p>
+<p><strong>此工具如有任何问题或者你们有什么建议或者链接失效等情况，请于公众号“肖恩札记”留言</strong></p>
 
 :ET
