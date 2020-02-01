@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Bilibili_py_advanced &middot; Shawn's Blog
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="/public/css/markdown.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+  
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/tags/">Tags</a>
+        
+      
+    
+
+    <a class="sidebar-nav-item" href="https://www.github.com/shawnchen1996/">GitHub</a>
+    <a class="sidebar-nav-item" href="https://www.linkedin.com/in/shawnchen1996/">LinkedIn</a>
+    <a class="sidebar-nav-item" href="mailto:shawnchen1996@outlook.com">Email</a>
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+        Powered by <a href="http://jekyllrb.com">jekyll</a>
+    </p>
+    <p>
+      &copy; 2020. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h1 class="masthead-title">
+            <a href="/" title="Home">Shawn's Blog</a>
+            <small>Biotech</small>
+          </h1>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Bilibili_py_advanced</h1>
+  <div class="post-meta">
+      <span class="post-date">12 Dec 2018</span>
+      
+          | Tags: 
+          
+              <a class="post-tag" href='http://localhost:4000/tags/#tech'>Tech</a>    
+          
+      
+    
+    <div class="post-content">
+        <p>This notenook is taken according to the video <strong><em>Python advanced programming</em></strong> on <a href="https://www.bilibili.com/video/av19983355/?from=search&amp;seid=1992914606051276112#page=3">www.bilibili.com</a>.</p>
+
+<ul>
+  <li><a href="#bilibili-python-advanced-programming">Bilibili Python Advanced programming</a>
+    <ul>
+      <li><a href="#filter-list-dict-and-set">Filter list dict and set</a>
+        <ul>
+          <li><a href="#list">List</a></li>
+          <li><a href="#dict">Dict</a></li>
+          <li><a href="#set">Set</a></li>
+        </ul>
+      </li>
+      <li><a href="#name-tuple">Name tuple</a></li>
+      <li><a href="#calculate-frequency">calculate frequency</a></li>
+      <li><a href="#sort-dict">Sort dict</a></li>
+      <li><a href="#find-the-common-key-in-multiple-dicts">Find the common key in multiple dicts</a></li>
+      <li><a href="#iteration-and-iterator">Iteration and Iterator</a></li>
+      <li><a href="#reserve-a-list-using-iterator">reserve a list using iterator</a></li>
+      <li><a href="#to-slice-an-iterator">To slice an Iterator</a></li>
+      <li><a href="#to-slice-string-with-multiple-seperator">To slice string with multiple seperator</a></li>
+      <li><a href="#endswith-startswith">endswith, startswith</a></li>
+      <li><a href="#format-alignment">Format : alignment</a></li>
+      <li><a href="#string-substitute">string substitute</a></li>
+      <li><a href="#generator-comprehansion">generator comprehansion</a></li>
+      <li><a href="#strip-unwanted-charaters">strip unwanted charaters</a></li>
+      <li><a href="#reading-binary-file---wav">reading binary file - .wav</a></li>
+      <li><a href="#file-buffering">file buffering</a></li>
+      <li><a href="#%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6">映射文件</a></li>
+      <li><a href="#access-file-info-stat">access file info &amp; stat</a></li>
+      <li><a href="#use-tempfile">use tempfile</a></li>
+      <li><a href="#xml-parse-and-create">XML : Parse and Create</a></li>
+      <li><a href="#read-and-write-excel">read and write Excel</a></li>
+      <li><a href="#class-initialization">class initialization</a></li>
+      <li><a href="#slot"><code class="highlighter-rouge">__slot__</code></a></li>
+      <li><a href="#context-management-enter-exit">Context Management: <code class="highlighter-rouge">__enter__</code>, <code class="highlighter-rouge">__exit__</code></a></li>
+      <li><a href="#class-propertise">class propertise</a></li>
+      <li><a href="#type-check-in-class-attribute">Type check in Class attribute</a></li>
+      <li><a href="#gccollect-and-weakref">gc.collect and weakref</a></li>
+      <li><a href="#call-a-function-given-the-name-of-the-function">call a function given the name of the function</a></li>
+      <li><a href="#multithread-and-inter-communication">multiThread and inter communication</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="filter-list-dict-and-set">Filter list dict and set</h2>
+
+<h3 id="list">List</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>TASK</strong> :
+To filter the negative numbers and get the positive ones</p>
+</blockquote>
+
+<p>A most general solution is to use interation : <code class="highlighter-rouge">for</code>. Buuuut…</p>
+
+<p>Example 1</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">filter</span><span class="p">(</span><span class="n">lamnda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Example 2</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>we can use ipython <code class="highlighter-rouge">timeit</code> to evaluate the performance</p>
+
+<h3 id="dict">Dict</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span><span class="n">randint</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)}</span>
+<span class="p">{</span><span class="n">k</span> <span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="set">Set</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">s</span> <span class="k">if</span> <span class="n">v</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="name-tuple">Name tuple</h2>
+
+<p>Example 1</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Jim</span> <span class="o">=</span> <span class="p">(</span><span class="s">'Jim'</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span> <span class="s">'male'</span><span class="p">,</span><span class="s">'jim123@gmail.com'</span><span class="p">)</span>
+<span class="n">NAME</span><span class="p">,</span> <span class="n">AGE</span><span class="p">,</span> <span class="n">SEX</span><span class="p">,</span> <span class="n">EMAIL</span> <span class="o">=</span> <span class="n">RANGE</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">Jim</span><span class="p">[</span><span class="n">EMAIL</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Example 2</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="n">Student</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Student'</span><span class="p">,[</span><span class="s">'name'</span><span class="p">,</span><span class="s">'age'</span><span class="p">,</span><span class="s">'sex'</span><span class="p">,</span><span class="s">'email'</span><span class="p">])</span>
+<span class="n">Jim</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="o">*</span><span class="n">Jim</span><span class="p">)</span> <span class="c1">#Jim from example 1
+</span><span class="n">Jim</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s">'Jim'</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span> <span class="s">'male'</span><span class="p">,</span><span class="s">'jim123@gmail.com'</span><span class="p">)</span>
+<span class="n">Jim</span><span class="p">[</span><span class="s">'age'</span><span class="p">]</span>
+
+</code></pre></div></div>
+
+<h2 id="calculate-frequency">calculate frequency</h2>
+
+<p>Example 1</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">c</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>Example 2</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>If we want to calculation frequency of words in a article we may use the <code class="highlighter-rouge">Counter(re.split('\W+',txt))</code> and <code class="highlighter-rouge">most_common(n)</code></p>
+</blockquote>
+
+<h2 id="sort-dict">Sort dict</h2>
+
+<blockquote>
+  <p>sorted()</p>
+</blockquote>
+
+<p>Example 1</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="s">'xyzabc'</span><span class="p">}</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+</code></pre></div></div>
+
+<p>Example 2</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="find-the-common-key-in-multiple-dicts">Find the common key in multiple dicts</h2>
+
+<p>Example 1</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span><span class="p">,</span><span class="n">sample</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">(</span><span class="s">'abcdefg'</span><span class="p">,</span><span class="n">randint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">))}</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">(</span><span class="s">'abcdefg'</span><span class="p">,</span><span class="n">randint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">))}</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">(</span><span class="s">'abcdefg'</span><span class="p">,</span><span class="n">randint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">))}</span>
+<span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">s1</span><span class="p">:</span> <span class="c1"># key interation
+</span>    <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">s2</span> <span class="ow">and</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">s3</span> <span class="p">:</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Example 2</p>
+<blockquote>
+  <p>dict.keys() will generate <code class="highlighter-rouge">set-like</code> object and use set <code class="highlighter-rouge">&amp;</code> to get intersection</p>
+</blockquote>
+
+<p><code class="highlighter-rouge">s1.keys() &amp; s2.keys() &amp; s3.keys()</code></p>
+
+<p>Example 3</p>
+<blockquote>
+  <p><code class="highlighter-rouge">map</code> and <code class="highlighter-rouge">reduce</code></p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<span class="c1">#generate 10 random dict using list comprehansion
+</span><span class="n">ss</span> <span class="o">=</span> <span class="p">[{</span><span class="n">x</span> <span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">(</span><span class="s">'abcdefg'</span><span class="p">,</span><span class="n">randint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">))}</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">keys</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">dict</span><span class="o">.</span><span class="n">keys</span><span class="p">,</span><span class="n">ss</span><span class="p">)</span>
+<span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="p">:</span><span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span><span class="p">,</span> <span class="n">keys</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="iteration-and-iterator">Iteration and Iterator</h2>
+
+<p>Example 1 :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="nb">iter</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>  <span class="c1">#which will use l.__iter__()
+</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s">'abc'</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">iter</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>  <span class="c1">#which will use s.__getitem__(index)
+</span></code></pre></div></div>
+
+<p><code class="highlighter-rouge">iter(iterable)</code> will return a iterator and the iterator has a <code class="highlighter-rouge">.next()</code> method to get each element.
+<code class="highlighter-rouge">For</code> loop will stop upon the <strong>Exception</strong> <code class="highlighter-rouge">StopIteration</code></p>
+
+<p>Example 2 :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Iterable</span><span class="p">,</span><span class="n">Iterator</span>
+
+<span class="n">Iterator</span><span class="o">.</span><span class="n">__abstractmethods_</span>
+<span class="n">Iterable</span><span class="o">.</span><span class="n">__abstractmethods__</span>
+
+<span class="k">class</span> <span class="nc">WeatherIterator</span><span class="p">(</span><span class="n">Iterator</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">cities</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cities</span> <span class="o">=</span> <span class="n">cities</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cities</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="nb">StopIteration</span>
+        <span class="n">city</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cities</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getWeather</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">getWeather</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">city</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://wthrcdn.etouch.cn/weather_mini?city={}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">city</span><span class="p">))</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+        <span class="n">high</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'data'</span><span class="p">][</span><span class="s">'forecast'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">'high'</span><span class="p">]</span>
+        <span class="n">low</span>  <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'data'</span><span class="p">][</span><span class="s">'forecast'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">'low'</span><span class="p">]</span>
+        <span class="k">return</span> <span class="s">'</span><span class="si">%</span><span class="s">s : </span><span class="si">%</span><span class="s">s , </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span><span class="p">(</span><span class="n">city</span><span class="p">,</span><span class="n">low</span><span class="p">,</span><span class="n">high</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">WeatherIterable</span><span class="p">(</span><span class="n">Iterable</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">cities</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cities</span> <span class="o">=</span> <span class="n">cities</span>
+
+    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">WeatherIterator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cities</span><span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">WeatherIterable</span><span class="p">([</span><span class="s">'北京'</span><span class="p">,</span><span class="s">'杭州'</span><span class="p">,</span><span class="s">'无锡'</span><span class="p">,</span><span class="s">'湖州'</span><span class="p">]):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Example 3 :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">class</span> <span class="nc">Weather</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">cities</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cities</span> <span class="o">=</span> <span class="n">cities</span>
+
+    <span class="k">def</span> <span class="nf">getWeather</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">city</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cities</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getWeather</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_getWeather</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">city</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://wthrcdn.etouch.cn/weather_mini?city={}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">city</span><span class="p">))</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+        <span class="n">high</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'data'</span><span class="p">][</span><span class="s">'forecast'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">'high'</span><span class="p">]</span>
+        <span class="n">low</span>  <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'data'</span><span class="p">][</span><span class="s">'forecast'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">'low'</span><span class="p">]</span>
+        <span class="k">return</span> <span class="s">'</span><span class="si">%</span><span class="s">s : </span><span class="si">%</span><span class="s">s , </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span><span class="p">(</span><span class="n">city</span><span class="p">,</span><span class="n">low</span><span class="p">,</span><span class="n">high</span><span class="p">)</span>
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">Weather</span><span class="p">([</span><span class="s">'北京'</span><span class="p">,</span><span class="s">'杭州'</span><span class="p">,</span><span class="s">'无锡'</span><span class="p">,</span><span class="s">'湖州'</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">getWeather</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Example 4 :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'first 1'</span><span class="p">)</span>
+    <span class="k">yield</span> <span class="mi">1</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">'first 2'</span><span class="p">)</span>
+    <span class="k">yield</span> <span class="mi">2</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">'first 3'</span><span class="p">)</span>
+    <span class="k">yield</span> <span class="mi">3</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">foo</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">__next__</span><span class="p">()</span>  <span class="c1"># == next(f)
+</span><span class="n">f</span><span class="o">.</span><span class="n">__next__</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">__next__</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">__next__</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="reserve-a-list-using-iterator">reserve a list using iterator</h2>
+
+<p>Example 1 :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">l</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>  <span class="c1"># it will change the real order of the element within
+</span><span class="n">l</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">l</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># return a full list, large consumption/cost if the list is large
+</span><span class="nb">reversed</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>  <span class="c1">#return an iterator,  the oppsite of 'iter(l)'
+# iter(l) uses the l.__iter__
+# reversed(l) uses the l.__reversed__
+</span></code></pre></div></div>
+
+<p>Example 2 :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">FloatRange</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">,</span><span class="n">step</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">start</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">end</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">step</span> <span class="o">=</span> <span class="n">step</span>
+
+    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span>
+        <span class="k">while</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">t</span>
+            <span class="n">t</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">step</span>
+
+    <span class="k">def</span> <span class="nf">__reversed__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span>
+        <span class="k">while</span> <span class="n">t</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">t</span>
+            <span class="n">t</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">step</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">FloatRange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="to-slice-an-iterator">To slice an Iterator</h2>
+
+<p>Example 1 :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#read line by line
+</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'xxxx'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="c1"># read the whole file
+</span><span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> <span class="p">;</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Example 2 :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># islice provide slice of iterator
+</span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">islice</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'xxxx'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">islice</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="c1">#islice(f,50)  # 0 - 50
+#islice(f,30,None) # 30 - EOF
+</span>
+<span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">t</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">islice</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'=========='</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="to-slice-string-with-multiple-seperator">To slice string with multiple seperator</h2>
+
+<p>Example 1 :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="s">'ab;cd|def|hi,jkl|mn</span><span class="se">\t</span><span class="s">opq;rst,uvw</span><span class="se">\t</span><span class="s">xyz'</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">';'</span><span class="p">)</span>
+<span class="n">t</span><span class="o">=</span> <span class="p">[]</span>
+<span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'|'</span><span class="p">)),</span><span class="n">res</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">t</span>
+<span class="n">t</span> <span class="o">=</span><span class="p">[]</span>
+<span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">)),</span><span class="n">res</span><span class="p">)</span>
+
+<span class="c1"># and so on...
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>In <strong>python3</strong> the <code class="highlighter-rouge">map</code> function is a genarator which won’t excute without interation. So we will use a for loop to exhaust it.</p>
+</blockquote>
+
+<p>Example 2 :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="s">'ab;cd|def|hi,jkl|mn</span><span class="se">\t</span><span class="s">opq;rst,uvw</span><span class="se">\t</span><span class="s">xyz'</span>
+<span class="k">def</span> <span class="nf">my_split</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">seps</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">sep</span> <span class="ow">in</span> <span class="n">seps</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">sep</span><span class="p">)</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span><span class="p">)),</span><span class="n">res</span><span class="p">):</span><span class="k">pass</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">t</span>
+    <span class="c1"># we will need to filter the empty list
+</span>    <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">res</span> <span class="k">if</span> <span class="n">i</span><span class="p">]</span>
+
+<span class="n">my_split</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">'|,;</span><span class="se">\t</span><span class="s">'</span><span class="p">)</span>
+<span class="c1"># and so on...
+</span></code></pre></div></div>
+
+<p>Example 3 :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#recommend
+</span><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s">'ab;cd|def|hi,jkl|mn</span><span class="se">\t</span><span class="s">opq;rst,uvw</span><span class="se">\t</span><span class="s">xyz'</span>
+<span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'[,;</span><span class="se">\t</span><span class="s">|]+'</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="endswith-startswith">endswith, startswith</h2>
+
+<p>Example 1 :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span><span class="p">,</span><span class="n">stat</span>
+<span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
+<span class="n">s</span> <span class="o">=</span><span class="s">'g.sh'</span>
+<span class="n">s</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">'.sh'</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">'.py'</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s">'.sh'</span><span class="p">,</span><span class="s">'.py'</span><span class="p">))</span> <span class="c1"># tuple, can't be list
+#change the mode of some files
+</span><span class="nb">oct</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="s">'filename'</span><span class="p">)</span><span class="o">.</span><span class="n">st_mode</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="s">'filename'</span><span class="p">,</span><span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="s">'filename'</span><span class="p">)</span><span class="o">.</span><span class="n">st_mode</span> <span class="o">|</span><span class="n">stat</span><span class="o">.</span><span class="n">S_IXUSE</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="format--alignment">Format : alignment</h2>
+
+<p>Example 1 :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="s">'abc'</span>
+<span class="n">s</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s">'-'</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s">'-'</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s">'-'</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>Example 2 :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="s">'abc'</span>
+<span class="nb">format</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">'&lt;20'</span><span class="p">)</span>
+<span class="s">'{:&lt;20}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Following is a table illustrating syntax of format</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">syntax</th>
+      <th style="text-align: left">explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">fill</td>
+      <td style="text-align: left">Any character except <code class="highlighter-rouge">}</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">align</td>
+      <td style="text-align: left">&lt; left <br /> &gt; right <br /> ^ center <br /> = pad between sign and digits for numbers</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">sign</td>
+      <td style="text-align: left">+ force sign <br /> - sign if needed <br /> “ “ space or - as appropriate</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">#</td>
+      <td style="text-align: left">prefix ints with 0b,0o,0x</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">0</td>
+      <td style="text-align: left">0-pad numbers</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">width</td>
+      <td style="text-align: left">Minimum filed width</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">,</td>
+      <td style="text-align: left">use commas for grouping</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">.precision</td>
+      <td style="text-align: left">Maximum field width for strings;<br /> number of decimal palces for floats</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">type</td>
+      <td style="text-align: left">ints : b, c, d, n, o, x, X; <br /> floats : e, E, f, g, G, n, %</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="string-substitute">string substitute</h2>
+
+<p>Example 1 :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="s">'''
+2016-05-23 aaa
+2016-05-24 bbb
+2016-05-27 ccc
+'''</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="n">res_1</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">'(</span><span class="err">\</span><span class="s">d{4})-(</span><span class="err">\</span><span class="s">d{2})-(</span><span class="err">\</span><span class="s">d{2})'</span><span class="p">,</span><span class="s">r'\2/\3/\1'</span><span class="p">,</span><span class="n">s</span><span class="p">)</span> <span class="c1"># \1 \2 \3 the 1st 2nd  3rd group
+</span><span class="k">print</span><span class="p">(</span><span class="n">res_1</span><span class="p">)</span>
+<span class="n">res_2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">'(?P&lt;y&gt;</span><span class="err">\</span><span class="s">d{4})-(?P&lt;m&gt;</span><span class="err">\</span><span class="s">d{2})-(?P&lt;d&gt;</span><span class="err">\</span><span class="s">d{2})'</span><span class="p">,</span><span class="s">r'\g&lt;m&gt;/\g&lt;d&gt;/\g&lt;y&gt;'</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">res_2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="generator-comprehansion">generator comprehansion</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s">'I'</span><span class="p">,</span><span class="s">'am'</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="s">'years'</span><span class="p">,</span><span class="s">'old'</span><span class="p">]</span>
+<span class="c1">#' '.join(x) #str only
+#use `(str(i) for i in x)` to create a generator to reduce cost
+</span><span class="s">' '</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="strip-unwanted-charaters">strip unwanted charaters</h2>
+
+<p>Method 1:
+<code class="highlighter-rouge">strip()</code>, <code class="highlighter-rouge">rstrip()</code>,<code class="highlighter-rouge">lstrip()</code></p>
+
+<p>Method 2:
+    use slice and join</p>
+
+<p>Method 3:
+<code class="highlighter-rouge">replace()</code> ,<code class="highlighter-rouge">re.sub()</code></p>
+
+<p>Method 4:
+<code class="highlighter-rouge">translate()</code></p>
+
+<p>Example :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#re.sub
+</span><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s">'abc</span><span class="se">\t</span><span class="s">def</span><span class="se">\n</span><span class="s">g'</span>
+<span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">'[</span><span class="se">\t\n</span><span class="s">]'</span><span class="p">,</span><span class="s">''</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+
+
+<span class="c1"># str.translate
+</span><span class="n">s</span> <span class="o">=</span> <span class="s">'abc1230323xyz'</span>
+<span class="n">t</span> <span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s">'abcxyz'</span><span class="p">,</span><span class="s">'xyzabc'</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">chrs</span><span class="p">):</span>
+    <span class="n">deleteChar</span> <span class="o">=</span> <span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">chrs</span><span class="p">)</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">deleteChar</span><span class="p">,</span><span class="bp">None</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+
+
+<span class="n">s</span> <span class="o">=</span> <span class="s">'abc</span><span class="se">\t</span><span class="s">def</span><span class="se">\n</span><span class="s">g'</span>
+<span class="n">chrs</span> <span class="o">=</span> <span class="s">'</span><span class="se">\n\t</span><span class="s">'</span>
+<span class="n">delete</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">chrs</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="reading-binary-file---wav">reading binary file - .wav</h2>
+
+<p>Example :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">struct</span><span class="p">,</span> <span class="n">array</span>
+<span class="nb">file</span>  <span class="o">=</span> <span class="s">'start.WAV'</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span><span class="s">'rb'</span><span class="p">)</span>
+<span class="c1">#for a .wav file, first 44 bytes are info of the file and the rest is the music data.
+#the music data is stored in a 'short' data structure
+#so each data is 2 bytes in size
+</span><span class="n">info</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">44</span><span class="p">)</span>
+<span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s">'h'</span><span class="p">,</span><span class="n">info</span><span class="p">[</span><span class="mi">22</span><span class="p">:</span><span class="mi">24</span><span class="p">])</span> <span class="c1"># number of channels
+</span><span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s">'i'</span><span class="p">,</span><span class="n">info</span><span class="p">[</span><span class="mi">24</span><span class="p">:</span><span class="mi">28</span><span class="p">])</span> <span class="c1"># Sample rate
+</span><span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s">'h'</span><span class="p">,</span><span class="n">info</span><span class="p">[</span><span class="mi">34</span><span class="p">:</span><span class="mi">36</span><span class="p">])</span> <span class="c1"># bits per sample
+</span><span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">-</span><span class="mi">44</span> <span class="p">)</span><span class="o">//</span><span class="mi">2</span>  <span class="c1"># the number of data
+# / operator will always return a float while // will return a int when both of the numerator and denominator are int , otherwise float
+</span><span class="n">data_buf</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s">'h'</span><span class="p">,(</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+<span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">44</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">data_buf</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">data_buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">//=</span> <span class="mi">8</span>
+
+<span class="n">f</span>  <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'start_2.WAV'</span><span class="p">,</span><span class="s">'wb'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+<span class="n">data_buf</span><span class="o">.</span><span class="n">tofile</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="file-buffering">file buffering</h2>
+
+<blockquote>
+  <p>python 默认缓冲方式为全缓冲：当缓冲区大小大于一个块大小时，写入<br />
+f.open(‘demo.txt’,’w’,buffering  = 2048)`<br />
+如上，若改变缓冲区大小为 2048，即缓冲区写入2049个字节时，才会向硬盘写入 2048个字节/一个块<br />
+当buffering = 1 时，为行缓冲，即写入 ‘\n’ 时，写入硬盘<br />
+当buffering = 0 时，无缓冲，实时写入</p>
+</blockquote>
+
+<p><em>btw, in markdown ‘space’ + ‘space’ + ‘return’ is soft linebreak</em></p>
+
+<h2 id="映射文件">映射文件</h2>
+
+<blockquote>
+  <p>文件映射到内存，用修改内存的方式来修改文件</p>
+</blockquote>
+
+<p>Example :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">mmap</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'demo.bin'</span><span class="p">,</span><span class="s">'r+b'</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">mmap</span><span class="o">.</span><span class="n">mmap</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">fileno</span><span class="p">(),</span><span class="mi">0</span><span class="p">,</span><span class="n">access</span> <span class="o">=</span> <span class="n">mmap</span><span class="o">.</span><span class="n">ACCESS_WRITE</span><span class="p">)</span>
+<span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">'</span><span class="se">\x88</span><span class="s">'</span>
+</code></pre></div></div>
+
+<h2 id="access-file-info--stat">access file info &amp; stat</h2>
+
+<p>Example 1:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span><span class="p">,</span><span class="n">stat</span><span class="p">,</span><span class="n">time</span>
+<span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">lstat</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">fstat</span><span class="p">(</span><span class="n">fileno</span><span class="p">)</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">stat</span><span class="o">.</span><span class="n">S_ISDIR</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">st_mode</span><span class="p">)</span> <span class="c1"># file type
+</span><span class="n">stat</span><span class="o">.</span><span class="n">S_IRUSR</span> <span class="o">&amp;</span> <span class="n">s</span><span class="o">.</span><span class="n">st_mode</span> <span class="c1"># get whether user readable
+</span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">st_atime</span><span class="p">)</span> <span class="c1"># get last access time
+</span><span class="n">s</span><span class="o">.</span><span class="n">st_size</span>  <span class="c1">#file size
+</span></code></pre></div></div>
+
+<p>Example 2:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="c1"># use `os.path`
+</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getatime</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getctime</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="use-tempfile">use tempfile</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">TemporaryFile</span><span class="p">,</span><span class="n">NamedTemporaryFile</span>
+<span class="c1"># we can't access TemporaryFile from the file system/file explorer,only the `f` variable.
+# we can access the NamedTemporaryFile through file explorer
+</span><span class="n">f</span> <span class="o">=</span> <span class="n">TemporaryFile</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'abd'</span><span class="o">*</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">()</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span> <span class="c1"># won't delete file when closing file
+</span></code></pre></div></div>
+
+<h2 id="xml--parse-and-create">XML : Parse and Create</h2>
+
+<p>Example 1:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">xml.etree.ElementTree</span> <span class="kn">import</span> <span class="n">Element</span><span class="p">,</span><span class="n">ElementTree</span><span class="p">,</span><span class="n">tostring</span><span class="p">,</span> <span class="n">parse</span>
+<span class="c1">#create
+</span><span class="n">e</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s">'student'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'name'</span><span class="p">,</span><span class="s">'shawn'</span><span class="p">)</span>
+<span class="n">tostring</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="n">e1</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s">'math'</span><span class="p">)</span>
+<span class="n">e1_1</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s">'high_score'</span><span class="p">)</span>
+<span class="n">e1_1</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">'100'</span>       <span class="c1"># only string allowed
+</span><span class="n">e1_2</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s">'low_score'</span><span class="p">)</span>
+<span class="n">e1_2</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">'90'</span>
+<span class="n">e1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e1_1</span><span class="p">)</span>
+<span class="n">e1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e1_2</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span>
+<span class="n">e2</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s">'English'</span><span class="p">)</span>
+<span class="n">e2_1</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s">'high_score'</span><span class="p">)</span>
+<span class="n">e2_1</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">'100'</span>
+<span class="n">e2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e2_1</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e2</span><span class="p">)</span>
+<span class="n">tostring</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="n">et</span> <span class="o">=</span> <span class="n">ElementTree</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="n">et</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'demo.xml'</span><span class="p">)</span>
+<span class="c1"># parse
+</span><span class="n">et</span> <span class="o">=</span> <span class="n">parse</span><span class="p">(</span><span class="s">'demo.xml'</span><span class="p">)</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">et</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
+<span class="n">tostring</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'math'</span><span class="p">))</span>
+<span class="n">root</span><span class="o">.</span><span class="n">attrib</span>
+<span class="n">root</span><span class="o">.</span><span class="n">getchildren</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">root</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'math'</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">'math'</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="nb">iter</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="nb">iter</span><span class="p">(</span><span class="s">'math'</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">'math/*'</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">'.//high_core'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>for more information, please visit <a href="https://docs.python.org/3.6/library/xml.etree.elementtree.html">The Python Standard Library Documentain</a>.</p>
+</blockquote>
+
+<p><strong>Supported XPath syntax</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Syntax</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">tag</code></td>
+      <td>Selects all child elements with the given tag. For example, <code class="highlighter-rouge">spam</code> selects all child elements named <code class="highlighter-rouge">spam</code>, and <code class="highlighter-rouge">spam/egg</code> selects all grandchildren named <code class="highlighter-rouge">egg</code> in all children named <code class="highlighter-rouge">spam</code> .</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">*</code></td>
+      <td>Selects all child elements. For example, <code class="highlighter-rouge">*/egg</code> selects all grandchildren named<code class="highlighter-rouge">egg</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">.</code></td>
+      <td>Selects the current node. This is mostly useful at the beginning of the path, to indicate that it’s a relative path.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">//</code></td>
+      <td>Selects all subelements, on all levels beneath the current element. For example, <code class="highlighter-rouge">.//egg</code> selects all <code class="highlighter-rouge">egg</code> elements in the entire tree.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">..</code></td>
+      <td>Selects the parent element. Returns <code class="highlighter-rouge">None</code> if the path attempts to reach the ancestors of the start element (the element <code class="highlighter-rouge">find</code> was called on).</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">[@attrib]</code></td>
+      <td>Selects all elements that have the given attribute.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">[@attrib='value']</code></td>
+      <td>Selects all elements for which the given attribute has the given value. The value cannot contain quotes.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">[tag]</code></td>
+      <td>Selects all elements that have a child named <code class="highlighter-rouge">tag</code>. Only immediate children are supported.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">[tag='text']</code></td>
+      <td>Selects all elements that have a child named <code class="highlighter-rouge">tag</code> whose complete text content, including descendants, equals the given<code class="highlighter-rouge">text</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">[position]</code></td>
+      <td>Selects all elements that are located at the given position. The position can be either an integer (1 is the first position), the expression<code class="highlighter-rouge">last()</code>(for the last position), or a position relative to the last position (e.g.<code class="highlighter-rouge">last()-1</code>).</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Example 2:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">from</span> <span class="nn">xml.etree.ElementTree</span> <span class="kn">import</span> <span class="n">Element</span><span class="p">,</span><span class="n">ElementTree</span><span class="p">,</span><span class="n">tostring</span><span class="p">,</span> <span class="n">parse</span>
+<span class="k">def</span> <span class="nf">csvToXml</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span><span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="n">header</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="nb">next</span><span class="p">()</span>
+
+        <span class="n">root</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s">'Data'</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+            <span class="n">eRow</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s">'row'</span><span class="p">)</span>
+            <span class="n">root</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">eRow</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">tag</span><span class="p">,</span><span class="n">text</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">header</span><span class="p">,</span><span class="n">row</span><span class="p">):</span>
+                <span class="n">e</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+                <span class="n">e</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+                <span class="n">eRow</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="n">prettyxml</span><span class="p">(</span><span class="n">root</span><span class="p">)</span> <span class="c1"># pretty xml
+</span>    <span class="k">return</span> <span class="n">ElementTree</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+
+<span class="c1">#In order for pretty print
+</span><span class="k">def</span> <span class="nf">prettyxml</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">level</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span> <span class="o">+</span> <span class="s">'</span><span class="se">\t</span><span class="s">'</span> <span class="o">*</span> <span class="p">(</span><span class="n">level</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">prettyxml</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">level</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">child</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">tail</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span> <span class="o">+</span> <span class="s">'</span><span class="se">\t</span><span class="s">'</span> <span class="o">*</span> <span class="n">level</span>
+</code></pre></div></div>
+
+<h2 id="read-and-write-excel">read and write Excel</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">xlrd</span>
+
+<span class="n">rbook</span> <span class="o">=</span> <span class="n">xlrd</span><span class="o">.</span><span class="n">open_workbook</span><span class="p">(</span><span class="n">fanme</span><span class="p">)</span>
+<span class="n">rsheet</span> <span class="o">=</span> <span class="n">rbook</span><span class="o">.</span><span class="n">sheet_by_index</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cell</span> <span class="o">=</span> <span class="n">rsheet</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="n">row</span> <span class="o">=</span> <span class="n">rsheet</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">rsheet</span><span class="o">.</span><span class="n">put_cell</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">xlwt</span>
+<span class="n">style</span> <span class="o">=</span> <span class="n">xlwt</span><span class="o">.</span><span class="n">easyxf</span><span class="p">(</span><span class="s">'align: vertical center,horizontal center'</span><span class="p">)</span>
+<span class="n">wbook</span> <span class="o">=</span> <span class="n">xlwt</span><span class="o">.</span><span class="n">Workbook</span><span class="p">()</span>
+<span class="n">wsheet</span> <span class="o">=</span> <span class="n">wbook</span><span class="o">.</span><span class="n">add_sheet</span><span class="p">(</span><span class="s">'sheet_1'</span><span class="p">)</span>
+<span class="n">wsheet</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">,</span><span class="n">value</span><span class="p">,</span><span class="n">style</span><span class="p">)</span>
+<span class="n">wbook</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">'name.xlsx'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="class-initialization">class initialization</h2>
+
+<blockquote>
+  <p>Task : inherit from immutable type and change their initialization</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">IntTuple</span><span class="p">(</span><span class="nb">tuple</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span><span class="n">iterable</span><span class="p">):</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">iterable</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">mro</span><span class="p">())</span>
+        <span class="bp">self</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="c1"># here only __new__ is needed. The following function is redundant
+</span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">iterable</span><span class="p">):</span>
+        <span class="c1">#before not possible
+</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span> <span class="c1"># still don't undertand why __init__ take no args
+</span>        <span class="c1">#after not possible
+</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">IntTuple</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">4.4</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mf">9.0</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>I will know try to explain this :</p>
+<blockquote>
+  <p>In order to initialize an instance, there are two steps</p>
+  <ol>
+    <li>create a object of that class, what <code class="highlighter-rouge">__new__</code> will do</li>
+    <li>fill the object with details, what <code class="highlighter-rouge">__init__</code> will do</li>
+  </ol>
+</blockquote>
+
+<ul>
+  <li>the <code class="highlighter-rouge">__new__()</code> will <strong>take</strong> the <code class="highlighter-rouge">cls</code> and other args for initializatin and will <strong>return</strong> a object that will be passed to <code class="highlighter-rouge">self</code> in the <code class="highlighter-rouge">__init__()</code>.</li>
+  <li>when I try to create a instance of IntTuple, <code class="highlighter-rouge">__new__</code> will be called with the parameter <code class="highlighter-rouge">iterable</code> and a class type <code class="highlighter-rouge">cls</code>, in this case , the <code class="highlighter-rouge">cls</code> is <code class="highlighter-rouge">IntTuple</code></li>
+  <li><code class="highlighter-rouge">super()</code> or <code class="highlighter-rouge">super(IntTuple,self)</code>(for init instance) or <code class="highlighter-rouge">super(IntTuple,cls)</code>(for new an object) will get the father class <code class="highlighter-rouge">tuple</code>’s scope and appliy the scope to <code class="highlighter-rouge">IntTuple</code>, so the scope will be changed temporially.</li>
+  <li>So, father will <code class="highlighter-rouge">__new__</code> and <code class="highlighter-rouge">__init__</code>  the child. AND the father will recursively call <code class="highlighter-rouge">super()</code> to get their father.</li>
+</ul>
+
+<p><strong>Important Note</strong></p>
+
+<ul>
+  <li>If the father class is immuntable, the <code class="highlighter-rouge">__new__</code> method should be used to initialize the child object. <code class="highlighter-rouge">__init__</code> will take no effect.</li>
+  <li>In the example above, <code class="highlighter-rouge">__new__</code> will return the <code class="highlighter-rouge">self</code> containing (1, 3, 8, 9). The <code class="highlighter-rouge">__init__</code> should simply call <code class="highlighter-rouge">super().__init__()</code> with no args, which is why the <code class="highlighter-rouge">__init__</code> override is unnecessary. Also, the args <code class="highlighter-rouge">iterable</code> in <code class="highlighter-rouge">__init__</code> is not the <code class="highlighter-rouge">g</code> taken from <code class="highlighter-rouge">super().__new__(cls,g)</code>. Instead, it is still [1,3,4.4,-4,8,9.0,9]</li>
+  <li>So, for <code class="highlighter-rouge">__init__</code> and <code class="highlighter-rouge">__new__</code>, the parameters passed in are the <strong>same</strong></li>
+  <li>for mutable object, still waiting to be explored.</li>
+</ul>
+
+<h2 id="__slot__"><code class="highlighter-rouge">__slot__</code></h2>
+
+<blockquote>
+  <p>use <code class="highlighter-rouge">__slot__</code> will reduce the cost</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uid</span> <span class="o">=</span> <span class="n">uid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">status</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="n">level</span>
+    
+<span class="k">class</span> <span class="nc">Player2</span><span class="p">():</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">[</span><span class="s">'uid'</span><span class="p">,</span> <span class="s">'name'</span><span class="p">,</span> <span class="s">'status'</span><span class="p">,</span> <span class="s">'level'</span><span class="p">]</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uid</span> <span class="o">=</span> <span class="n">uid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">status</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="n">level</span>
+
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="s">'001'</span><span class="p">,</span> <span class="s">'Jim'</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Player2</span><span class="p">(</span><span class="s">'002'</span><span class="p">,</span> <span class="s">'Tom'</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">p1</span><span class="p">))</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">p2</span><span class="p">))</span> <span class="c1"># there will be a __dict__
+# the __dict__ allow for dynamically add and delete attributes, which is not wanted in most cases, e.g :
+</span><span class="k">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">x</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="k">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="s">'y'</span><span class="p">]</span>  <span class="o">=</span><span class="mi">1</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">y</span>
+<span class="k">def</span> <span class="nf">p1</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="s">'x'</span><span class="p">]</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">x</span>
+<span class="k">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span>
+
+<span class="n">p2</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>    <span class="c1"># throw an error
+</span></code></pre></div></div>
+
+<h2 id="context-management-__enter__-__exit__">Context Management: <code class="highlighter-rouge">__enter__</code>, <code class="highlighter-rouge">__exit__</code></h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">telnetlib</span> <span class="kn">import</span> <span class="n">Telnet</span>
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span><span class="p">,</span> <span class="n">stdout</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+
+
+<span class="k">class</span> <span class="nc">TelnetClient</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">23</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">addr</span> <span class="o">=</span> <span class="n">addr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">port</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tn</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># user
+</span>        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tn</span><span class="o">.</span><span class="n">read_until</span><span class="p">(</span><span class="s">'login: '</span><span class="p">)</span>
+        <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tn</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+
+        <span class="c1"># password
+</span>        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tn</span><span class="o">.</span><span class="n">read_until</span><span class="p">(</span><span class="s">'Password: '</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">user</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+        <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tn</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+
+        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tn</span><span class="o">.</span><span class="n">read_until</span><span class="p">(</span><span class="s">'$ '</span><span class="p">)</span>
+        <span class="n">stdout</span><span class="o">.</span><span class="n">writ</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">uinput</span> <span class="o">=</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">uinput</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">uinput</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tn</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">uinput</span><span class="p">)</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tn</span><span class="o">.</span><span class="n">read_until</span><span class="p">(</span><span class="s">'$ '</span><span class="p">)</span>
+            <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">uinput</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:])</span>
+
+    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tn</span> <span class="o">=</span> <span class="n">Telnet</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">addr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">history</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+        <span class="c1"># here the `self` will be passed to the variable after `as` -&gt; 'clinet'
+</span>        <span class="k">return</span> <span class="bp">self</span> 
+
+    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tn</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">addr</span> <span class="o">+</span> <span class="s">'history.txt'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="p">)</span>
+
+
+<span class="k">with</span> <span class="n">TelnetClient</span><span class="p">(</span><span class="s">'127.0.0.1'</span><span class="p">)</span> <span class="k">as</span> <span class="n">clinet</span><span class="p">:</span>  
+<span class="c1"># the client is the `self` __enter__ returned
+</span>    <span class="n">client</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+
+</code></pre></div></div>
+
+<h2 id="class-propertise">class propertise</h2>
+
+<p>Example 1</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
+
+    <span class="k">def</span> <span class="nf">getRadius</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+
+    <span class="k">def</span> <span class="nf">setRadius</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'wrong radius type'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">val</span>
+    
+    <span class="k">def</span> <span class="nf">getArea</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">radiud</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span>
+</code></pre></div></div>
+
+<p>Example 2</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">=</span> <span class="n">radius</span>
+
+    <span class="k">def</span> <span class="nf">getRadius</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span>
+
+    <span class="k">def</span> <span class="nf">setRadius</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'wrong radius type'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">=</span> <span class="n">val</span>
+    
+    <span class="k">def</span> <span class="nf">getArea</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span>
+
+    <span class="n">R</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">getRadius</span><span class="p">,</span> <span class="n">setRadius</span><span class="p">)</span>
+    <span class="c1">#property(fget=None,fset=None,fdel=None,doc=None)
+</span></code></pre></div></div>
+
+<p>Example 3</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">=</span> <span class="n">radius</span>
+
+    <span class="o">@</span><span class="nb">property</span>
+    <span class="k">def</span> <span class="nf">radius</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span>
+    
+    <span class="o">@</span><span class="n">radius</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">radius</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'wrong radius type'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">=</span> <span class="n">val</span>
+    
+    <span class="k">def</span> <span class="nf">getArea</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">"&lt;Circle ({})&gt;"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_radius</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getArea</span><span class="p">()</span> <span class="o">==</span> <span class="n">obj</span><span class="o">.</span><span class="n">getArea</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getArea</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">obj</span><span class="o">.</span><span class="n">getArea</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">Rectangle</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">height</span>
+
+    <span class="o">@</span><span class="nb">property</span>
+    <span class="k">def</span> <span class="nf">width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_width</span>
+    
+    <span class="o">@</span><span class="n">width</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">radius</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'wrong radius type'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_width</span> <span class="o">=</span> <span class="n">val</span>
+    
+    <span class="o">@</span><span class="nb">property</span>
+    <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span>
+    
+    <span class="o">@</span><span class="n">height</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'wrong radius type'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="k">def</span> <span class="nf">getArea</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">"&lt;Rectangle ({0},{1})&gt;"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_width</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">_height</span><span class="p">)</span>
+
+<span class="c1">#    def __eq__(self, obj):
+#        return self.getArea() == obj.getArea()
+#
+#    def __gt__(self, obj):
+#        return self.getArea() &gt; obj.getArea()
+</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">&gt;</span> <span class="n">c</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+<span class="k">class</span> <span class="nc">Shape</span><span class="p">():</span>
+    <span class="o">@</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">Shape</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="nb">TypeError</span><span class="p">(</span><span class="s">'obj not a shape'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getArea</span><span class="p">()</span> <span class="o">==</span> <span class="n">obj</span><span class="o">.</span><span class="n">getArea</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">Shape</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="nb">TypeError</span><span class="p">(</span><span class="s">'obj not a shape'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">area</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">obj</span><span class="o">.</span><span class="n">area</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">=</span> <span class="n">radius</span>
+
+    <span class="o">@</span><span class="nb">property</span>
+    <span class="k">def</span> <span class="nf">radius</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span>
+    
+    <span class="o">@</span><span class="n">radius</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">radius</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'wrong radius type'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">=</span> <span class="n">val</span>
+    
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">"&lt;Circle ({})&gt;"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_radius</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Rectangle</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">height</span>
+
+    <span class="o">@</span><span class="nb">property</span>
+    <span class="k">def</span> <span class="nf">width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_width</span>
+    
+    <span class="o">@</span><span class="n">width</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">radius</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'wrong radius type'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_width</span> <span class="o">=</span> <span class="n">val</span>
+    
+    <span class="o">@</span><span class="nb">property</span>
+    <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span>
+    
+    <span class="o">@</span><span class="n">height</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'wrong radius type'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">"&lt;Rectangle ({0},{1})&gt;"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_width</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">_height</span><span class="p">)</span>
+
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">&gt;</span> <span class="n">c</span>
+</code></pre></div></div>
+
+<h2 id="type-check-in-class-attribute">Type check in Class attribute</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Attr</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">type_</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type_</span> <span class="o">=</span> <span class="n">type_</span>
+    
+    <span class="k">def</span> <span class="nf">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">instance</span><span class="p">,</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">instance</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+    
+    <span class="k">def</span> <span class="nf">__set__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">instance</span><span class="p">,</span><span class="n">val</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">type_</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="nb">TypeError</span><span class="p">(</span><span class="s">'expected an </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span><span class="bp">self</span><span class="o">.</span><span class="n">type_</span><span class="p">)</span>
+        <span class="n">instance</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="k">def</span> <span class="nf">__delete__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="k">del</span> <span class="n">instance</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">person</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">Attr</span><span class="p">(</span><span class="s">'name'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+    <span class="n">age</span>  <span class="o">=</span> <span class="n">Attr</span><span class="p">(</span><span class="s">'age'</span><span class="p">,</span>  <span class="nb">int</span><span class="p">)</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">Attr</span><span class="p">(</span><span class="s">'height'</span><span class="p">,</span><span class="nb">float</span><span class="p">)</span>
+
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">person</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">'bob'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="s">'1'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="gccollect-and-weakref">gc.collect and weakref</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">weakref</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">o_wref</span> <span class="o">=</span> <span class="n">weakref</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="n">obj_</span> <span class="o">=</span> <span class="n">o_wref</span><span class="p">()</span>
+<span class="n">obj</span> <span class="ow">is</span> <span class="n">obj_</span>
+<span class="c1">#import gc
+#gc.collect()
+</span></code></pre></div></div>
+
+<h2 id="call-a-function-given-the-name-of-the-function">call a function given the name of the function</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Circle</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">=</span> <span class="n">radius</span>
+
+    <span class="k">def</span> <span class="nf">getArea</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="mf">3.14</span>
+
+
+<span class="k">class</span> <span class="nc">Rectangle</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">height</span>
+
+    <span class="k">def</span> <span class="nf">get_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">area1</span><span class="p">(</span><span class="n">shape</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s">'get_area'</span><span class="p">,</span><span class="s">'getArea'</span><span class="p">]:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">f</span><span class="p">()</span>
+
+
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">methodcaller</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s">'abc123abc456'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'abc'</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">methodcaller</span><span class="p">(</span><span class="s">'find'</span><span class="p">,</span><span class="s">'abc'</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">area2</span><span class="p">(</span><span class="n">shape</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s">'get_area'</span><span class="p">,</span><span class="s">'getArea'</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">methodcaller</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+
+
+<span class="n">area1</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">area1</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="n">area2</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="n">area2</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="multithread-and-inter-communication">multiThread and inter communication</h2>
+
+<p>Thread</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
+
+<span class="k">def</span> <span class="nf">something</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1">#Method 1
+#t = Thread(target = something,args = (1,))
+#t.start()
+</span>
+<span class="c1">#Method 2
+</span><span class="k">class</span> <span class="nc">MyThread</span><span class="p">(</span><span class="n">Thread</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">something</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">threads</span> <span class="o">=</span>  <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">MyThread</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">threads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'Done'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Writing, Reading and signaling between Threads</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span><span class="p">,</span> <span class="n">Event</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">tarfile</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">random</span><span class="p">,</span> <span class="n">string</span>
+<span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">Queue</span>
+
+<span class="k">class</span> <span class="nc">dThread</span><span class="p">(</span><span class="n">Thread</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">queue</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uid</span> <span class="o">=</span> <span class="n">uid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="n">queue</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="p">)</span>
+        <span class="n">txt</span> <span class="o">=</span> <span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="p">,</span> <span class="n">txt</span><span class="p">))</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">wtThread</span><span class="p">(</span><span class="n">Thread</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">queue</span><span class="p">,</span> <span class="n">wtEvent</span><span class="p">,</span> <span class="n">tarEvent</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="n">queue</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wtEvent</span> <span class="o">=</span> <span class="n">wtEvent</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tarEvent</span> <span class="o">=</span> <span class="n">tarEvent</span>
+
+    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">uid</span><span class="p">,</span> <span class="n">txt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">uid</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tarEvent</span><span class="o">.</span><span class="nb">set</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">wtEvent</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+                <span class="k">break</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span> <span class="o">+</span> <span class="s">'.txt'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tarEvent</span><span class="o">.</span><span class="nb">set</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">wtEvent</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">wtEvent</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+                <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">tarThread</span><span class="p">(</span><span class="n">Thread</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wtEvent</span><span class="p">,</span> <span class="n">tarEvent</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wtEvent</span> <span class="o">=</span> <span class="n">wtEvent</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tarEvent</span> <span class="o">=</span> <span class="n">tarEvent</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setDaemon</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">tar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">tfname</span> <span class="o">=</span> <span class="s">'{}.tgz'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+        <span class="n">tf</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="nb">open</span><span class="p">(</span><span class="n">tfname</span><span class="p">,</span> <span class="s">'w:gz'</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s">'.'</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">fname</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">'.txt'</span><span class="p">):</span>
+                <span class="n">tf</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+        <span class="n">tf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">tf</span><span class="o">.</span><span class="n">members</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">tfname</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tarEvent</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tar</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tarEvent</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wtEvent</span><span class="o">.</span><span class="nb">set</span><span class="p">()</span>
+
+
+<span class="n">q</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+<span class="n">wtEvent</span> <span class="o">=</span> <span class="n">Event</span><span class="p">()</span>
+<span class="n">tarEvent</span> <span class="o">=</span> <span class="n">Event</span><span class="p">()</span>
+<span class="n">tarthread</span> <span class="o">=</span> <span class="n">tarThread</span><span class="p">(</span><span class="n">wtEvent</span><span class="p">,</span><span class="n">tarEvent</span><span class="p">)</span>
+<span class="n">wtthread</span> <span class="o">=</span> <span class="n">wtThread</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">wtEvent</span><span class="p">,</span><span class="n">tarEvent</span><span class="p">)</span>
+<span class="n">downthreads</span> <span class="o">=</span> <span class="p">[</span><span class="n">dThread</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">18</span><span class="p">)]</span>
+
+<span class="n">wtthread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">tarthread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">downthreads</span><span class="p">:</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">downthreads</span><span class="p">:</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+
+<span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">None</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Main thread, Exiting'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">executor</span> <span class="o">=</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'f'</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">**</span> <span class="n">b</span>
+
+<span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span class="n">executor</span><span class="o">.</span><span class="nb">map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span> <span class="p">,</span><span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span><span class="p">,</span> <span class="n">cv2</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">struct</span><span class="p">,</span> <span class="n">theading</span>
+<span class="kn">from</span> <span class="nn">BaseHTTPServer</span> <span class="kn">import</span> <span class="n">HTTPServer</span><span class="p">,</span> <span class="n">BaseHTTPRequestHandler</span>
+<span class="kn">from</span> <span class="nn">socketServer</span> <span class="kn">import</span> <span class="n">Thread</span><span class="p">,</span> <span class="n">RLock</span>
+<span class="kn">from</span> <span class="nn">select</span> <span class="kn">import</span> <span class="n">select</span>
+
+<span class="k">class</span> <span class="nc">JpegStreamer</span><span class="p">(</span><span class="n">Thread</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">camera</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="n">camera</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lock</span> <span class="o">=</span> <span class="n">RLock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipes</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">pr</span><span class="p">,</span> <span class="n">pw</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">pipe</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipes</span><span class="p">[</span><span class="n">pr</span><span class="p">]</span> <span class="o">=</span> <span class="n">pw</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">pr</span>
+        
+    <span class="k">def</span> <span class="nf">unregister</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pr</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipes</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">pr</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+        <span class="n">pr</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="n">pw</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">capture</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">cap</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cap</span>
+        <span class="k">while</span> <span class="n">cap</span><span class="o">.</span><span class="n">isOpened</span><span class="p">():</span>
+            <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">ret</span><span class="p">:</span>
+                <span class="n">ret</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imencode</span><span class="p">(</span><span class="s">'.jpg'</span><span class="p">,</span>
+                <span class="n">frame</span><span class="p">,</span> <span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">IMWRITE_JPEG_QUALITY</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
+                <span class="k">yield</span> <span class="n">data</span><span class="o">.</span><span class="n">tostring</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">frame</span><span class="p">):</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">'l'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">frame</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pipes</span><span class="p">):</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">pipes</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">select</span><span class="p">([]</span><span class="o">.</span><span class="bp">self</span><span class="o">.</span><span class="n">pipes</span><span class="o">.</span><span class="n">itervalues</span><span class="p">(),[],</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">pipe</span> <span class="ow">in</span> <span class="n">pipes</span><span class="p">:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span><span class="n">frame</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">frame</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">capture</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+
+    
+<span class="k">class</span> <span class="nc">JpegRetriver</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">streamer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">streamer</span> <span class="o">=</span> <span class="n">streamer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipe</span> <span class="o">=</span> <span class="n">streamer</span><span class="o">.</span><span class="n">register</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">retrieve</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">ns</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pipe</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s">'l'</span><span class="p">,</span> <span class="n">ns</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pipe</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+            <span class="k">yield</span> <span class="n">data</span>
+
+    <span class="k">def</span> <span class="nf">cleanup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">streamer</span><span class="o">.</span><span class="n">unregister</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pipe</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Handler</span><span class="p">(</span><span class="n">BaseHTTPRequestHandler</span><span class="p">):</span>
+    <span class="n">retriever</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="o">@</span><span class="nb">staticmethod</span>
+    <span class="k">def</span> <span class="nf">setJpegRetriever</span><span class="p">:</span>
+        <span class="n">Handler</span><span class="o">.</span><span class="n">retriever</span> <span class="o">=</span> <span class="n">retriever</span>
+
+    <span class="k">def</span> <span class="nf">do_GET</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">retriver</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="nb">RuntimeError</span><span class="p">(</span><span class="s">'No retriever'</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">!=</span> <span class="s">'/'</span><span class="p">:</span>
+            <span class="k">return</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_response</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_header</span><span class="p">(</span><span class="s">'Content-type'</span><span class="p">,</span> <span class="s">'multipart/x-mixed-replace;boundary=abcde'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_headers</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">frame</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">retriever</span><span class="o">.</span><span class="n">retrieve</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">send_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">send_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'--abcde</span><span class="se">\r\n</span><span class="s">'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'Content-Type: image/jpeg</span><span class="se">\r\n</span><span class="s">'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'Content-Length: </span><span class="si">%</span><span class="s">d'</span> <span class="o">%</span><span class="nb">len</span><span class="p">(</span><span class="n">frame</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">streamer</span> <span class="o">=</span> <span class="n">JpegStreamer</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">streamer</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">retriever</span> <span class="o">=</span> <span class="n">JpegRetriever</span><span class="p">(</span><span class="n">streamer</span><span class="p">)</span>
+    <span class="n">Handler</span><span class="o">.</span><span class="n">setJpegRetriever</span><span class="p">(</span><span class="n">retriever</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'starting...'</span><span class="p">)</span>
+    <span class="n">httpd</span> <span class="o">=</span> <span class="n">TCPServer</span><span class="p">((</span><span class="s">''</span><span class="p">,</span><span class="mi">9000</span><span class="p">),</span> <span class="n">Handler</span><span class="p">)</span>
+    <span class="n">httpd</span><span class="o">.</span><span class="n">server_forever</span><span class="p">()</span>
+
+
+
+
+
+
+</code></pre></div></div>
+
+    </div>
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h4>
+          <a href="/2020/01/22/%E7%A7%8B%E6%8B%9B%E5%BF%83%E5%BE%97/">
+            秋招心得
+            <small>22 Jan 2020</small>
+          </a>
+        </h4>
+      </li>
+    
+      <li>
+        <h4>
+          <a href="/2019/12/05/%E5%85%AC%E5%85%B1%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8C%96%E6%8E%98%E5%AE%9E%E4%BE%8B/">
+            公共数据库挖掘实例
+            <small>05 Dec 2019</small>
+          </a>
+        </h4>
+      </li>
+    
+      <li>
+        <h4>
+          <a href="/2019/11/20/wb_protocal/">
+            Wb_protocal
+            <small>20 Nov 2019</small>
+          </a>
+        </h4>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if (target === toggle) {
+            checkbox.checked = !checkbox.checked;
+            e.preventDefault();
+          } else if (checkbox.checked && !sidebar.contains(target)) {
+            /* click outside the sidebar when sidebar is open */
+            checkbox.checked = false;
+          }
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

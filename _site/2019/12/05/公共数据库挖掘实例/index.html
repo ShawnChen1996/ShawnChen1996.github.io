@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      公共数据库挖掘实例 &middot; Shawn's Blog
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="/public/css/markdown.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+  
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/tags/">Tags</a>
+        
+      
+    
+
+    <a class="sidebar-nav-item" href="https://www.github.com/shawnchen1996/">GitHub</a>
+    <a class="sidebar-nav-item" href="https://www.linkedin.com/in/shawnchen1996/">LinkedIn</a>
+    <a class="sidebar-nav-item" href="mailto:shawnchen1996@outlook.com">Email</a>
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+        Powered by <a href="http://jekyllrb.com">jekyll</a>
+    </p>
+    <p>
+      &copy; 2020. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h1 class="masthead-title">
+            <a href="/" title="Home">Shawn's Blog</a>
+            <small>Biotech</small>
+          </h1>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">公共数据库挖掘实例</h1>
+  <div class="post-meta">
+      <span class="post-date">05 Dec 2019</span>
+      
+          | Tags: 
+          
+              <a class="post-tag" href='http://localhost:4000/tags/#biology'>Biology</a>    
+          
+              <a class="post-tag" href='http://localhost:4000/tags/#dataanalysis'>DataAnalysis</a>    
+          
+      
+    
+    <div class="post-content">
+        <p>生信技能树—jimmy</p>
+
+<p>https://www.bilibili.com/video/av37568990</p>
+
+<h2 id="msigdb"><code class="highlighter-rouge">MSigDB</code></h2>
+<p>数据集 药物处理影响通路、cancer hallmark, GO and KEGG等</p>
+
+<p>GSE -&gt; 表达矩阵 -&gt; 统计分析 -&gt; 注释，富集 -&gt; PPI网络， 模块</p>
+
+<p>统计方法</p>
+<ul>
+  <li>差异分析</li>
+  <li>PCA (Principal Component Analysis)</li>
+  <li>PLS (Partial Least Squares)</li>
+  <li>Lasso (Least Absolute Shrinkage and Selection Operator)</li>
+  <li>WCGNA</li>
+  <li>GWGS</li>
+  <li>Cytoscape MCODE</li>
+</ul>
+
+<h2 id="r">R</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x = ls('package:xxxx.db')
+toTable(x[1])
+as.list(x[1])
+</code></pre></div></div>
+
+    </div>
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h4>
+          <a href="/2020/01/22/%E7%A7%8B%E6%8B%9B%E5%BF%83%E5%BE%97/">
+            秋招心得
+            <small>22 Jan 2020</small>
+          </a>
+        </h4>
+      </li>
+    
+      <li>
+        <h4>
+          <a href="/2019/11/20/wb_protocal/">
+            Wb_protocal
+            <small>20 Nov 2019</small>
+          </a>
+        </h4>
+      </li>
+    
+      <li>
+        <h4>
+          <a href="/2019/10/10/qPCR%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
+            Qpcr数据处理
+            <small>10 Oct 2019</small>
+          </a>
+        </h4>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if (target === toggle) {
+            checkbox.checked = !checkbox.checked;
+            e.preventDefault();
+          } else if (checkbox.checked && !sidebar.contains(target)) {
+            /* click outside the sidebar when sidebar is open */
+            checkbox.checked = false;
+          }
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>
