@@ -27,12 +27,12 @@ h4 {
     font-size: 1em;
     font-weight: bold;
     line-height:1.2;
+    color: #FF5555;
 }
 
 h5 {
     font-size: 1em;
     font-weight: bold;
-    color: #FF5555;
     line-height:1.2;
 }
 
@@ -110,12 +110,12 @@ blockquote {
 }
 
 strong, dfn {
-    color: #268bd2;
+    color: #3399FF;
 }
 
 
 em, dfn {
-    color: #55CC55;
+    color: #FF9933;
 }
 
 
