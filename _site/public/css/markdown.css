@@ -6,45 +6,43 @@ h1 {
 }
 
 
-h2 {
-    font-size: 1.5em;
-    line-height: 1.5;
-    margin: 1.5em 0px;
-    border-left: 5px solid #FF5555;
-    padding-left: 16px; 
-    font-weight: bold;
+h2, h3, h4, h5, h6 {
+ line-height: 1.5em;
+ margin-top: 2.2em;
+ margin-bottom: 4px;
+ font-weight: bold;
 }
 
-h3 { 
+
+h2 {
+  font-size: 1.5em;
+  display: inline-block;
+  margin-bottom: 35px;
+  background: linear-gradient(#fff 60%, #ffb11b 40%);
+  color: #515151;
+  padding: 2px 13px 2px;
+  margin-right: 3px;
+  height: 50%;
+  /* border-left: 5px solid #FF5555; */
+}
+ 
+h3 {
+  color: #515151;
   font-size: 1.2em;
   line-height:1.2;
   margin: 1.2em 0px;
-  font-weight: bold;
+  padding-left: 20px;
+  border-left: 3px solid #f9bf45;
 }
+
 
 h4 {
-
-    font-size: 1em;
-    font-weight: bold;
-    line-height:1.2;
-    color: #FF5555;
+  color: #515151;
+  margin: 1.2em 0px;
+  padding-left: 20px;
+  font-size: 1em;
+  line-height:1.2;
 }
-
-h5 {
-    font-size: 1em;
-    font-weight: bold;
-    line-height:1.2;
-}
-
-
-h6 {
-    font-size: 1em;
-    font-weight: bold;
-    color: #666666;
-    line-height:1.2;
-}
-
-
 
 
 img
