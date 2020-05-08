@@ -4,7 +4,7 @@
  <title>Shawn's Blog</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-05-08T16:58:09+08:00</updated>
+ <updated>2020-05-08T17:15:15+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Shawn</name>
@@ -146,7 +146,7 @@
 
 &lt;p&gt;https://www.bilibili.com/video/av37568990&lt;/p&gt;
 
-&lt;h2 id=&quot;msigdb&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MSigDB&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;msigdb&quot;&gt;MSigDB&lt;/h2&gt;
 &lt;p&gt;数据集 药物处理影响通路、cancer hallmark, GO and KEGG等&lt;/p&gt;
 
 &lt;p&gt;GSE -&amp;gt; 表达矩阵 -&amp;gt; 统计分析 -&amp;gt; 注释，富集 -&amp;gt; PPI网络， 模块&lt;/p&gt;
